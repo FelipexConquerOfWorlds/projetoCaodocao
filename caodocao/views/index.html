@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<!--
+ * A Design by GraphBerry
+ * Author: GraphBerry
+ * Author URL: http://graphberry.com
+ * License: http://graphberry.com/pages/license
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CãoDoção</title>
+	<link rel="shortcut icon" href="" type="img/logo.png" />
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<script src="js/modernizr.custom.js"></script>
+	<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="loader">
+		<div class="project-loader">
+			<div class="bubblingG">
+				<span id="bubblingG_1"></span>
+				<span id="bubblingG_2"></span>
+				<span id="bubblingG_3"></span>
+			</div>
+		</div>
+	</div>
+	<div class="loading" id="wrapper">
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-smak navbar-fixed-top " id="navbar" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
+					<a class="navbar-brand animate" href="#"><img src="img/logo.png" alt="logo1"></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right animate">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#services">Sobre</a></li>
+						<li><a href="#portfolio">Animais</a></li>
+						<li><a href="#about">Funções</a></li>
+						<li><a href="#clients">ONG´S</a></li>
+						<li><a href="#contact">Contato</a></li>
+						<li><a href="#login" role="button" data-toggle="modal" data-target="#login-modal">Login</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+		<div style="position: fixed; z-index: -99; width: 100%; height: 100%"></div>
+		<section id="home" class="home home-fullscreen">
+			<div class="slide text-slider-wrapper">
+				<div class="container">
+					<ul class="text-slider clearfix">
+						<li class="clearfix">
+							<span class="lead">adote um amigo</span>
+							<a href="" class="btn btn-primary outline-outward" data-toggle="modal" data-target="#adotar-modal">ADOTAR</a>
+						</li>
+						<li class="clearfix">
+							<span class="lead">doe um amigo</span>
+							<a href="" class="btn btn-primary outline-outward" data-toggle="modal" data-target="#doar-modal">DOAR</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<a href="#services" class="go-to godown">
+				<span>
+					<span class="fa fa-angle-double-down fa-2x"></span>
+					<span class="fa fa-angle-double-down fa-2x"></span>
+					<span class="fa fa-angle-double-down fa-2x"></span>
+					<span class="fa fa-angle-double-down fa-2x"></span>
+					<span class="fa fa-angle-double-down fa-2x"></span>
+				</span>
+			</a>
+		</section>
+
+<!-------------------------------------------------------------------->
+
+		<div class="modal fade" id="adotar-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog" style="background-color: black;">
+				<div class="modal-content "style= background-color:#333333;">
+					<div class="modal-header" align="center">
+						<img class="img-circle"  src="img/portfolio/caozinho.jpg">
+						<br>
+						Bob
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+
+					<!-- INICIO # DIV Form -->
+					<div id="div-forms">
+
+						<!-- Begin # Login Form -->
+						<form id="login-form">
+							<div class="modal-body">
+								<div id="div-login-msg">
+									<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-login-msg">   Raça :   lindao <br>   Idade:   4 anos <br> Sexo:    Masculino <br><br> Dono: Jeffin.Chaves3573 <br> <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores dignissimos explicabo, itaque maxime nobis odit porro rem sit vel! Adipisci aspernatur dolorum ipsa maxime necessitatibus neque obcaecati velit veritatis.</span>
+								</div>
+
+
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Adotar</button>
+								</div>
+
+							</div>
+						</form>
+						<!-- FINAL # Login Form -->
+
+						<!-- INICIO | Lost Password Form -->
+						<form id="lost-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-lost-msg">
+									<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-lost-msg">Type your e-mail.</span>
+								</div>
+								<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+								</div>
+								<div>
+									<button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+								</div>
+							</div>
+						</form>
+						<!-- FINAL | Lost Password Form -->
+
+						<!-- INICIO | Register Form -->
+						<form id="register-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-register-msg">
+									<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-register-msg">Register an account.</span>
+								</div>
+								<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+								<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+								<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+								</div>
+								<div>
+									<button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+								</div>
+							</div>
+						</form>
+						<!-- FINAL | Register Form -->
+
+					</div>
+					<!-- FINAL  # DIV Form -->
+
+				</div>
+			</div>
+		</div>
+		<!-- FINAL  # MODAL LOGIN -->
+
+
+		<!-------------------------------------------------------------------->
+
+		<!-- INICIO # MODAL LOGIN -->
+		<div class="modal fade" id="doar-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog" style="background-color: black;">
+				<div class="modal-content "style= background-color:#333333;">
+					<div class="modal-header" align="center">
+						<img class="img-circle"  src="img/"> <br>
+						selecione imagens do pet
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+
+					<!-- INICIO # DIV Form -->
+					<div id="div-forms">
+
+						<!-- Begin # Login Form -->
+						<form id="login-form">
+							<div class="modal-body">
+								<div id="div-login-msg">
+									<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-login-msg">Cadastre seu PET</span>
+								</div>
+								<input id="login_username" class="form-control" type="text" placeholder="Nome do cahorro " required>
+								<input id="login_username" class="form-control" type="text" placeholder="Idade" required>
+								<input id="login_password" class="form-control" type="password" placeholder="Sexo" required>
+								<br>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Cachorro
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> gato
+									</label>
+								</div>
+
+								<input id="login_password" class="form-control" type="password" placeholder="Raça" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+								</div>
+
+							</div>
+						</form>
+						<!-- FINAL # Login Form -->
+
+						<!-- INICIO | Lost Password Form -->
+						<form id="lost-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-lost-msg">
+									<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-lost-msg">Type your e-mail.</span>
+								</div>
+								<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+								</div>
+								<div>
+									<button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+								</div>
+							</div>
+						</form>
+						<!-- FINAL | Lost Password Form -->
+
+						<!-- INICIO | Register Form -->
+						<form id="register-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-register-msg">
+									<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-register-msg">Register an account.</span>
+								</div>
+								<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+								<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+								<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+								</div>
+								<div>
+									<button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+								</div>
+							</div>
+						</form>
+						<!-- FINAL | Register Form -->
+
+					</div>
+					<!-- FINAL  # DIV Form -->
+
+				</div>
+			</div>
+		</div>
+		<!-- FINAL  # MODAL LOGIN -->
+
+		<!-------------------------------------------------------------------->
+
+
+
+		<!-------------------------------------------------------------------->
+
+		<!-- INICIO # MODAL LOGIN -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog" style="background-color: black;">
+			<div class="modal-content "style= background-color:#333333;">
+				<div class="modal-header" align="center">
+					<img class="img-circle"  src="img/oculos.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+
+                <!-- INICIO # DIV Form -->
+                <div id="div-forms">
+
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Insira seu Usuário e senha.</span>
+                            </div>
+				    		<input id="login_username" class="form-control" type="text" placeholder="Usuário" required>
+				    		<input id="login_password" class="form-control" type="password" placeholder="Senha" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Lembre-me
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link" style="color:#ffe600">Perdeu a senha?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link" style="color:#ffe600">Registre-se</button>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- FINAL # Login Form -->
+
+                    <!-- INICIO | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Type your e-mail.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- FINAL | Lost Password Form -->
+
+                    <!-- INICIO | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+		    				<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- FINAL | Register Form -->
+
+                </div>
+                <!-- FINAL  # DIV Form -->
+
+			</div>
+		</div>
+	</div>
+    <!-- FINAL  # MODAL LOGIN -->
+
+<!-------------------------------------------------------------------->
+
+
+		<!-- BEGIN # MODAL LOCAL -->
+		<div class="modal fade" id="local-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog" style="background-color: black;">
+				<div class="modal-content "style= background-color:#333333;">
+					<div class="modal-header" align="center">
+
+						<i class="fa fa-map-marker fa-4x"></i>
+						<br>
+						Localizador
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+
+					<!-- Begin # DIV Form -->
+					<div id="div-forms">
+
+						<!-- Begin # Login Form -->
+						<form id="login-form">
+							<div class="modal-body">
+								<div id="div-login-msg">
+
+									<span id="text-login-msg"></span>
+									<img src="img/mapa.png" >
+									<br><br>
+								</div>
+								<input id="login_username" class="form-control" type="number" placeholder="A quanto dias o animal foi visto" required>
+
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Localizar</button>
+								</div>
+
+							</div>
+						</form>
+						<!-- End # Login Form -->
+
+						<!-- Begin | Lost Password Form -->
+						<form id="lost-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-lost-msg">
+									<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-lost-msg">Type your e-mail.</span>
+								</div>
+								<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+								</div>
+								<div>
+									<button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Lost Password Form -->
+
+						<!-- Begin | Register Form -->
+						<form id="register-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-register-msg">
+									<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-register-msg">Register an account.</span>
+								</div>
+								<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+								<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+								<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+								</div>
+								<div>
+									<button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Register Form -->
+
+					</div>
+					<!-- End # DIV Form -->
+
+				</div>
+			</div>
+		</div>
+		<!-- END # MODAL LOGIN -->
+
+		<!-------------------------------------------------------------------->
+
+		<!-------------------------------------------------------------------->
+
+
+		<!-- BEGIN # MODAL LOCAL -->
+		<div class="modal fade" id="hotel-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog" style="background-color: black;">
+				<div class="modal-content "style= background-color:#333333;">
+					<div class="modal-header" align="center">
+
+						<i class="fa fa-hospital-o fa-4x"></i>
+						<br>
+						Hotel Pet
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+
+					<!-- Begin # DIV Form -->
+					<div id="div-forms">
+
+						<!-- Begin # Login Form -->
+						<form id="login-form">
+							<div class="modal-body">
+								<div id="div-login-msg">
+									<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-login-msg"></span>
+
+
+								</div>
+								<input id="login_username" class="form-control" type="text" placeholder="Seu local" required>
+								<input id="login_username" class="form-control" type="text" placeholder="quantos dias?" required>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Cachorro
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Gato
+									</label>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Procurar</button>
+								</div>
+
+							</div>
+						</form>
+						<!-- End # Login Form -->
+
+						<!-- Begin | Lost Password Form -->
+						<form id="lost-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-lost-msg">
+									<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-lost-msg">Type your e-mail.</span>
+								</div>
+								<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+								</div>
+								<div>
+									<button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Lost Password Form -->
+
+						<!-- Begin | Register Form -->
+						<form id="register-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-register-msg">
+									<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-register-msg">Register an account.</span>
+								</div>
+								<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+								<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+								<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+								</div>
+								<div>
+									<button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Register Form -->
+
+					</div>
+					<!-- End # DIV Form -->
+
+				</div>
+			</div>
+		</div>
+		<!-- END # MODAL LOGIN -->
+
+		<!-------------------------------------------------------------------->
+
+
+
+
+
+		<!-------------------------------------------------------------------->
+
+
+		<!-- BEGIN # MODAL LOGIN -->
+		<div class="modal fade" id="cachorrinho-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog" style="background-color: black;">
+				<div class="modal-content "style= background-color:#333333;">
+					<div class="modal-header" align="center">
+						<img class="img-circle"  src="img/oculos.jpg">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+
+					<!-- Begin # DIV Form -->
+					<div id="div-forms">
+
+						<!-- Begin # Login Form -->
+						<form id="login-form">
+							<div class="modal-body">
+								<div id="div-login-msg">
+									<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-login-msg">Insira seu Usuário e senha.</span>
+								</div>
+								<input id="login_username" class="form-control" type="text" placeholder="Usuário" required>
+								<input id="login_password" class="form-control" type="password" placeholder="Senha" required>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Lembre-me
+									</label>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+								</div>
+								<div>
+									<button id="login_lost_btn" type="button" class="btn btn-link" style="color:#ffe600">Perdeu a senha?</button>
+									<button id="login_register_btn" type="button" class="btn btn-link" style="color:#ffe600">Registre-se</button>
+								</div>
+							</div>
+						</form>
+						<!-- End # Login Form -->
+
+						<!-- Begin | Lost Password Form -->
+						<form id="lost-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-lost-msg">
+									<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-lost-msg">Type your e-mail.</span>
+								</div>
+								<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+								</div>
+								<div>
+									<button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Lost Password Form -->
+
+						<!-- Begin | Register Form -->
+						<form id="register-form" style="display:none;">
+							<div class="modal-body">
+								<div id="div-register-msg">
+									<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-register-msg">Register an account.</span>
+								</div>
+								<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+								<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+								<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+								</div>
+								<div>
+									<button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+									<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Register Form -->
+
+					</div>
+					<!-- End # DIV Form -->
+
+				</div>
+			</div>
+		</div>
+		<!-- END # MODAL LOGIN -->
+
+		<!-------------------------------------------------------------------->
+
+
+		<section id="services" class="gray">
+			<div class="container pad-bot-50">
+				<div class="heading">
+
+					<h1>Nossos serviços</h1>
+					<div class="divider"><span></span></div>
+
+				</div>
+			<div class="branded-section process">
+				<div class="masked">
+					<div class="container">
+						<div class="heading">
+							<h3 class="primary-color">O que fazemos</h3>
+
+						</div>
+						<div class="row centralizado">
+							<div class="col-sm-3">
+								<div class="process-item ">
+
+									<i class="fa fa-heart-o fa-3x"></i>
+
+									<h3>Adoção</h3>
+									<p class="font-m">Aqui você pode adotar um animal de acordo com o seu gosto.</p>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="process-item delay1">
+									<i class="fa fa-heart fa-3x"></i>
+									<h3>Doação</h3>
+									<p class="font-m">Nosso site é um meio pra fazer uma pessoa feliz, doando o seu amiguinho</p>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="process-item delay2">
+									<i class="fa fa-hospital-o fa-3x"></i>
+									<h3>HOTEL PET</h3>
+									<p class="font-m">Uma das funcionalidades do site é proporcionar uma negocição de deixar o seu pet com um outro usuario de seu agrado e que seja perto de você.</p>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="process-item delay3">
+									<i href="" class="fa fa-map-marker fa-3x"></i>
+									<h3>LOCALIZADOR ANIMAL</h3>
+									<p class="font-m">Nosso site tem também como ferramenta o localizador de animais, onde você poderá estar passando o paradeiro de um animal perdido.</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="portfolio" id="portfolio">
+			<div class="container">
+				<div class="heading">
+					<div>Animais</div>
+					<h1>Categorias</h1>
+					<div class="divider"><span></span></div>
+					<p>Aqui sao as categorias de variados animais que possuimos para adoção.</p>
+				</div>
+				<div class="centered-pills">
+					<ul class="nav nav-pills">
+						<li class="filter" data-filter="all">
+							<a href="javascript:void(0)">Todos</a>
+						</li>
+						<li class="filter" data-filter="cachorros">
+							<a href="javascript:void(0)">Cachorros</a>
+						</li>
+						<li class="filter" data-filter="gatos">
+							<a href="javascript:void(0)">Gatos</a>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="container">
+				<div id="single-project"></div>
+			</div>
+			<div>
+				<ul class="full-portfolio clearfix" id="Grid">
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item  cachorros ">
+
+
+						<a href="pagina.html"><img src="img/portfolio/placeholder-1.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>Cachorrinho</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Bilu</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item cachorros ">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-2.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>cachorro</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Rex</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item cachorros ">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-3.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>Cachorrão</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Jone</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item gatos">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-4.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>gatinho</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Zézinho</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item gatos">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-5.png" class="img-responsive" alt="" style="">
+							<div class="mask">
+								<h4>Gato</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Bob </p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item gatos">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-6.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>Gatao</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Tom</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item gatos">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-7.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>gatinho</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Toby</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item cachorros">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-8.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>cachorro</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">pluto</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item gatos">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-9.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>Gato</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Zoiodo</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item cachorros">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-10.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>Cachorrão</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Spiken</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item gatos">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-11.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>gato</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Atum</p>
+							</div>
+						</a>
+					</li>
+					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolio-item cachorros">
+						<a href="ajax/project-1.html">
+							<img src="img/portfolio/placeholder-12.png" class="img-responsive" alt="">
+							<div class="mask">
+								<h4>Cachorrão</h4>
+								<div class="divider"><span></span></div>
+								<p class="font-m">Thor</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="container">
+				<div class="heading">
+					<h1> </h1>
+					<p>.</p>
+				</div>
+
+			</div>
+			<div class="branded-section numbers">
+				<div class="masked">
+					<div class="container">
+						<div class="heading">
+							<h2>dados de progresso</h2>
+							<p>Nosso progresso para um mundo animal melhor e feliz</p>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="number-item">
+									<span class="number" id="clientsCounter" data-count="1600" data-duration="2">1600</span>
+									<span class="text">Animais doados</span>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="number-item">
+									<span class="number" id="projectCounter" data-count="3200" data-duration="2">3200</span>
+									<span class="text">animais adotados</span>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="number-item">
+									<span class="number" id="awardCounter" data-count="40" data-ration="1.5">40</span>
+									<span class="text">ANIMAIS ENCONTRADOS</span>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="number-item">
+									<span class="number" id="coffeeCounter" data-count="20000" data-duration="3">20 000</span>
+									<span class="text">ANIMAIS PARA SEREM ADOTADOS</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="container">
+				<div class="heading">
+
+					<h1>Funções</h1>
+					<div class="divider">
+						<span></span>
+					</div>
+					<p>Confira aplicações como o LOCALIZADOR ANIMAL e o HOTEL PET. </p>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+
+					</div>
+				</div>
+			</div>
+			<div class="gray">
+
+			</div>
+			<div class="branded-section skills">
+				<div class="masked">
+					<div class="container">
+						<div class="heading">
+
+							<div class="col-md-6">
+								<div class="about-item">
+									<div class="circle pull-left">
+										<i class="fa fa-map-marker"></i>
+									</div>
+									<p>Localizador Animal</p>
+									<p class="font-m">È uma aplicaçao com o seu uso voltado para a localizar animais perdidos e devolve-los aos seus respectivos donos, passando a sua localização no  mapa.</p>
+									<br>
+									<a href="" class="btn btn-primary outline-outward" data-toggle="modal" data-target="#local-modal">Localizar</a>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="about-item delay2">
+									<div class="circle pull-left">
+										<i class="fa fa-hospital-o"></i>
+									</div>
+									<p>Hotel Pet</p>
+									<p class="font-m">O Hotel Pet tem como intuido promover uma interaçao com usuarios para deixar seu animal na responsabilidade do outro, podera escolher o responsavel de acordo do seu agrado.</p>
+									<br>
+									<a href="" class="btn btn-primary outline-outward" data-toggle="modal" data-target="#hotel-modal">Buscar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+		</section>
+		<section id="clients">
+			<div class="container">
+				<div class="heading">
+					<div>OGN'S</div>
+					<h1> ONG'S participiantes.</h1>
+					<div class="divider">
+						<span></span>
+					</div>
+					<p>Essas são ONG'S cadastradas que estão trabalhando conosco. </p>
+				</div>
+				<div class="row">
+					<ul class="client-slider clearfix" id="clint-slider">
+						<li><img src="img/clients/logo1.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo2.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo3.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo4.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo5.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo6.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo7.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo1.png" alt="" class="grayscale"></li>
+						<li><img src="img/clients/logo2.png" alt="" class="grayscale"></li>
+					</ul>
+				</div>
+				<ul class="client-nav">
+					<li id="client-prev"></li>
+					<li id="client-next"></li>
+				</ul>
+			</div>
+			<div class="branded-section quote">
+				<div class="masked">
+					<div class="container">
+						<div id="testimonials" class="bxslider clearfix">
+							<blockquote>
+								<p>O importante não é vencer todos os dias, mas lutar sempre.</p>
+								<div class="divider">
+									<span></span>
+								</div>
+								Victor Gomes
+							</blockquote>
+							<blockquote>
+								<p>O mal ganha quando homens bons nao fazem nada.</p>
+								<div class="divider">
+									<span></span>
+								</div>
+								Felipe Borba
+							</blockquote>
+							<blockquote>
+								<p>Você nao é derrotado quando perde, é derrotado quando desiste.</p>
+								<div class="divider">
+									<span></span>
+								</div>
+								Asaph Varela
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="gray">
+			<div class="container">
+				<div class="heading">
+					<div>Contate-nos</div>
+					<h1>Como entrar em contato conosco</h1>
+					<div class="divider">
+						<span></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 adress-element ">
+						<i class="fa fa-home fa-2x"></i>
+						<h3>Nosso endereço</h3>
+						<span class="font-l">IFC Araquari, B1</span>
+					</div>
+					<div class="col-md-4 adress-element delay2">
+						<i class="fa fa-comment fa-2x"></i>
+						<h3>Nosso email</h3>
+						<span class="font-l">caodocao@gmail.com</span>
+					</div>
+					<div class="col-md-4 adress-element delay4">
+						<i class="fa fa-phone fa-2x"></i>
+						<h3>Nosso telefone</h3>
+						<span class="font-l">+012 555 555 5555</span>
+					</div>
+				</div>
+			</div>
+			<div class="branded-section contact-form">
+				<div class="masked">
+					<div class="container">
+						<div class="heading">
+							<h1 class="light-font">Envie-nos uma mensagem</h1>
+							<p class="light-font">Caso tenha alguma duvida ou sujestão envie uma mensagem.</p>
+						</div>
+						<form class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-4" style="position:relative">
+									<input type="text" name="Name" data-new-placeholder="Qual é o seu nome?" class="form-control label_better" placeholder="Nome">
+								</div>
+								<div class="col-sm-4">
+									<input type="text" name="Email" class="form-control label_better" placeholder="Email">
+								</div>
+								<div class="col-sm-4">
+									<input type="text" name="Phone" class="form-control label_better" placeholder="telefone">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea class="form-control label_better" placeholder="Seu comentário.." rows="7"></textarea>
+								</div>
+							</div>
+							<div class="form-group commands">
+								<button class="btn btn-primary">Enviar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+
+				<ul class="social-list">
+					<li class="facebook">
+						<a href="http://goo.gl/RqhEjP"><i class="fa fa-facebook"></i></a>
+					</li>
+					<li class="twitter">
+						<a href="http://goo.gl/hUfpSB"><i class="fa fa-twitter"></i></a>
+					</li>
+					<li class="instagran">
+						<a href="http://goo.gl/k9zAy5">	<i class="fa fa-instagram"></i></a>
+					</li>
+					<li class="youtube">
+						<a href="#"><i class="fa fa-youtube"></i></a>
+					</li>
+				</ul>
+				<a href="#home" class="square-l goup" style="position: relative">
+					<span>
+						<span class="fa fa-angle-double-up fa-2x"></span>
+						<span class="fa fa-angle-double-up fa-2x"></span>
+						<span class="fa fa-angle-double-up fa-2x"></span>
+						<span class="fa fa-angle-double-up fa-2x"></span>
+						<span class="fa fa-angle-double-up fa-2x"></span>
+					</span>
+				</a>
+			</div>
+		</footer>
+	</div>
+	<!-- Load all jsavascrip files -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="js/jquery.label_better.js"></script>
+	<script type="text/javascript" src="js/jquery.mixitup.js"></script>
+	<script type="text/javascript" src="js/jquery.easypiechart.js"></script>
+	<script type="text/javascript" src="js/jquery.inview.js"></script>
+	<script type="text/javascript" src="js/countUp.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/grid.js"></script>
+	<script>
+	$(function() {
+		Grid.init();
+	});
+	</script>
+</body>
+</html>
