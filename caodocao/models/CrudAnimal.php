@@ -1,12 +1,17 @@
 <?php
-                        include_once("Conexao.php");
+                        require_once "Conexao.php";
                         include_once("Animal.php");
 class CrudAnimal
 {
+    public $conexao;
+    public function __construct()
+    {
+        $this->conexao = Conexao::getConexao();
+    }
 
 
     public function GetAnimal(int $id){
-        $this->conexao = DBConnection::getConexao;
+        $this->conexao = DBConnection::getConexao();
 
         $sql = "select * from animal where cod_animal =".$id;
 
@@ -21,7 +26,7 @@ class CrudAnimal
 
     public function GetAnimais(){
 
-                $this->conexao = DBConnection::getConexao;
+                $this->conexao = DBConnection::getConexao();
 
                 $sql = "select * from animal";
 
@@ -80,11 +85,37 @@ cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod
                 }
     }
 
-    public function FiltrarAnimais ($datanascimento = null, $cod_raca = null, $cod_especie = "1=1"){
-                $this->conexao = DBConnection::getConexao;
+    public function FiltrarAnimais ($datanascimento = "3=3", $cod_especie = "1=1", $cod_raca = "2=2" ){
+
+                    if ($datanascimento != "3=3"){
+                $datanascimento = "datanascimento = '{$datanascimento}'";
+                        }
+                    if ($cod_especie != "1=1"){
+                $cod_especie = "cod_especie = '{$cod_especie}'";
+                    }
+                    if ($cod_raca != "2=2"){
+                 $cod_raca = "cod_raca = '{$cod_raca}'";
+                    }
+
+                $sql = "SELECT * FROM `animal` WHERE '{$datanascimento}' and '{$cod_especie}'and '{$cod_raca}'";
+                $res = $this->conexao->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 
+                $resultado = array();
+                foreach ($res as $animal){
+                    $animala = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_especie'], $animal['cod_doacao'], $animal['cod_usu'], $animal['cod_animal']);
+                    $resultado[] = $animala;
+                }
+                
+                return $resultado;
+                
+                
         }
 
 
 }
+
+
+$c = new CrudAnimal();
+$res = $c->FiltrarAnimais("2018-06-07");
+print_r($res);
