@@ -15,9 +15,9 @@ class Animal
     private $cod_raca;
     private $cod_doacao;
     private $cod_usu;
+    private $cod_especie;
 
-
-            public function __construct($nome, $datanascimento, $foto_perfil, $cod_raca, $cod_doacao, $cod_usu, $cod_animal)
+            public function __construct($nome, $datanascimento, $foto_perfil, $cod_raca, $cod_doacao, $cod_especie, $cod_usu, $cod_animal)
             {
                 $this->nome = $nome;
                 $this->datanascimento = $datanascimento;
@@ -26,6 +26,7 @@ class Animal
                 $this->cod_raca = $cod_raca;
                 $this->cod_doacao = $cod_doacao;
                 $this->cod_usu = $cod_usu;
+                $this->cod_especie = $cod_especie;
             }
 
     /**
@@ -42,6 +43,22 @@ class Animal
     public function setNome($nome)
     {
         $this->nome = $nome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCodEspecie()
+    {
+        return $this->cod_especie;
+    }
+
+    /**
+     * @param mixed $cod_especie
+     */
+    public function setCodEspecie($cod_especie)
+    {
+        $this->cod_especie = $cod_especie;
     }
 
     /**

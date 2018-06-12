@@ -14,7 +14,7 @@ class CrudAnimal
 
         $animal = $resultado->fetch(PDO::FETCH_ASSOC);
 
-        $objetoAnimal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_doacao'], $animal['cod_usu'], $animal['cod_animal']);
+        $objetoAnimal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_doacao'], $animal['cod_especie'], $animal['cod_usu'], $animal['cod_animal']);
 
         return $objetoAnimal;
     }
@@ -32,7 +32,7 @@ class CrudAnimal
                 $listaAnimais = [];
 
                 foreach ($animais as $animal){
-                    $animal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_doacao'], $animal['cod_usu'], $animal['cod_animal']);
+                    $animal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_especie'], $animal['cod_doacao'], $animal['cod_usu'], $animal['cod_animal']);
                     $listaAnimais[] = $animal;
                 }
 
@@ -42,7 +42,7 @@ class CrudAnimal
     public function CadastrarAnimais(Animal $animal){
                 $this->conexao = DBConnection::getConexao;
 
-                $sql = "insert into animal (nome, datanascimento, foto_perfil, cod_raca, cod_doacao, cod_usu, cod_animal) values ('".$animal->getNome()."','".$animal->getDatanascimento()."','".$animal->getFotoPerfil()."','".$animal->getCodRaca()."','".$animal->getCodDoacao()."','".$animal->getCodUsu()."','".$animal->getCodAnimal()."')";
+                $sql = "insert into animal (nome, datanascimento, foto_perfil, cod_especie, cod_raca, cod_doacao, cod_usu, cod_animal) values ('".$animal->getNome()."','".$animal->getDatanascimento()."','".$animal->getFotoPerfil()."','".$animal->getCodEspecie()."','".$animal->getCodRaca()."','".$animal->getCodDoacao()."','".$animal->getCodUsu()."','".$animal->getCodAnimal()."')";
 
                 try{
                     $this->conexao->exec($sql);
@@ -56,7 +56,7 @@ class CrudAnimal
     public function UpdateAnimal(Animal $animal){
                 $this->conexao = DBConnection::getConexao;
 
-                $sql = "update animal SET nome = '{$animal->getNome()}', datanascimento = '{$animal->getDatanascimento()}', foto_perfil ='{$animal->getFotoPerfil()}', cod_raca = '{$animal->getCodRaca()}',
+                $sql = "update animal SET nome = '{$animal->getNome()}', datanascimento = '{$animal->getDatanascimento()}', foto_perfil ='{$animal->getFotoPerfil()}', cod_especie ='{$animal->getCodEspecie()}' cod_raca = '{$animal->getCodRaca()}',
 cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod_animal = '{$animal->getCodAnimal()}'";
 
                 try{
@@ -79,4 +79,12 @@ cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod
                     return $e->getMessage();
                 }
     }
+
+    public function FiltrarAnimais ($datanascimento = null, $cod_raca = null, $cod_especie = "1=1"){
+                $this->conexao = DBConnection::getConexao;
+
+
+        }
+
+
 }
