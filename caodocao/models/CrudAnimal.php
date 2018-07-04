@@ -26,7 +26,7 @@ class CrudAnimal
 
     public function GetAnimais(){
 
-                $this->conexao = DBConnection::getConexao();
+
 
                 $sql = "select * from animal";
 
@@ -115,7 +115,3 @@ cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod
 
 }
 
-
-$c = new CrudAnimal();
-$res = $c->FiltrarAnimais("2018-06-07");
-print_r($res);

@@ -13,13 +13,13 @@ class Conexao
 
         public static function getConexao(){
             try{ $conexao = new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME.";", self::USUARIO, self::SENHA);
-            return $conexao;
-//                if (self::$conexao == null){
-//                    self::$conexao = new PDO("mysql:host=".self::HOST."dbname=".self::DBNAME, self::USUARIO, self::SENHA);
-//                    self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//                    }
-//
-//                    return self::$conexao;
+
+                if (self::$conexao == null){
+                    self::$conexao = new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME, self::USUARIO, self::SENHA);
+                    self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    }
+
+                    return self::$conexao;
 
             }catch (PDOException $e){
                     die("Falha na conexao:".$e->getMessage());
