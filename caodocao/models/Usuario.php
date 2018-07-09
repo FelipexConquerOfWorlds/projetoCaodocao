@@ -10,9 +10,9 @@ class Usuario
         private $cod_usu;
         private $cnpj;
         private $cod_cida;
+        private $cd_tipuser;
 
-
-            public function __construct($nome, $email, $telefone, $senha, $cod_cida, $cnpj, $cod_usu)
+            public function __construct($nome, $email, $telefone, $senha, $cod_cida, $cnpj, $cod_usu, $cd_tipuser)
             {
                 $this->nome = $nome;
                 $this->email = $email;
@@ -21,7 +21,7 @@ class Usuario
                 $this->cod_usu = $cod_usu;
                 $this->cnpj = $cnpj;
                 $this->cod_cida = $cod_cida;
-
+                $this->cd_tipuser = $cd_tipuser;
             }
 
     /**
@@ -38,6 +38,22 @@ class Usuario
     public function setNome($nome)
     {
         $this->nome = $nome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCdTipuser()
+    {
+        return $this->cd_tipuser;
+    }
+
+    /**
+     * @param mixed $cd_tipuser
+     */
+    public function setCdTipuser($cd_tipuser)
+    {
+        $this->cd_tipuser = $cd_tipuser;
     }
 
     /**
