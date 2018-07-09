@@ -12,6 +12,11 @@ if (isset($_GET['acao'])){
 
 require_once '../models/CrudAnimal.php';
 
+
+
+
+
+
 //if tiver logado como admin entra nesse switch
 switch ($acao){
     case 'index':
@@ -20,12 +25,10 @@ switch ($acao){
         include '../views/animais/index.php';
 
         break;
-    case 'exibir':
+    case 'exibir': //vai ter que ser com a funcao filtrar animais
         $crud = new CrudAnimal();
         $animal  = $crud->GetAnimal($_GET['cod']);
         include '../views/animais/exibir.php';
-
-
         break;
 
     case 'inserir':
@@ -34,21 +37,28 @@ switch ($acao){
         break;
 
     case 'gravaInserir':
+
+        $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $_POST['foto_perfil']);
+        $crud = new CrudAnimal();
+        $mec = $crud->CadastrarAnimais($animal);
         //recebe os dados do FORM via POST
         //chama o crud
         //chama o metodo de insert do crud
         break;
 
     case 'alterar':
-
+        include '../views/animais/alterar.php';
         break;
 
     case 'gravaAlterar':
-
-        break
+        $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $_POST['foto_perfil']);
+        $crud = new CrudAnimal();
+        $mec = $crud->UpdateAnimal($animal);
+        break;
 
     case 'apagar':
-
+        $crud = new CrudAnimal();
+        $mec = $crud->DeleteAnimal();
         break;
 
     default:
