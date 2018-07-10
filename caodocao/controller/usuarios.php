@@ -48,4 +48,13 @@ switch ($acao){
         $crud = new CrudUsuario();
         $apaga = $crud->DeleteUsuario($_GET['id']);
         break;
+
+     case 'login':
+//        $sql = "select .... where login=";
+
+        //se deu certo, grava os dados na sessão
+    //    $_SESSION['nome'] = $usuario->getNome();
+    //    grava todas as informaçõpes que quiser
+    //redireciona
+
 }
