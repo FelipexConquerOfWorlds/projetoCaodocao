@@ -46,6 +46,7 @@ class CrudAnimal
 
     public function CadastrarAnimais(Animal $animal){
                 $this->conexao = DBConnection::getConexao;
+                //a foto no BD é apenas o endereço
 
                 $sql = "insert into animal (nome, datanascimento, foto_perfil, cod_especie, cod_raca, cod_doacao, cod_usu, cod_animal) values ('".$animal->getNome()."','".$animal->getDatanascimento()."','".$animal->getFotoPerfil()."','".$animal->getCodEspecie()."','".$animal->getCodRaca()."','".$animal->getCodDoacao()."','".$animal->getCodUsu()."','".$animal->getCodAnimal()."')";
 
@@ -112,6 +113,32 @@ cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod
                 
         }
 
+     public function insertRaca($cod_especie, $descricao){
+
+                    $sql = "insert into raca(cod_especie, descricao) values ('{$cod_especie}', '{$descricao}')";
+
+                         try{
+                             $this->conexao->exec($sql);
+
+                             }catch (PDOException $e){
+                                 return $e->getMessage();
+                             }
+
+                         }
+
+
+      public function insertEspecie($descricao){
+
+                    $sql = "insert into especie(descicao) values ('{$descricao}')";
+
+                      try{
+                          $this->conexao->exec($sql);
+
+                      }catch (PDOException $e){
+                          return $e->getMessage();
+                      }
+
+                  }
 
 }
 
