@@ -45,7 +45,7 @@ if (isset($_SESSION['nome'])) {
             //move_uploaded_file($origem, $destino);
 
 
-            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $destino);
+            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $destino,);
             $crud = new CrudAnimal();
             $mec = $crud->CadastrarAnimais($animal);
             //recebe os dados do FORM via POST
@@ -58,7 +58,7 @@ if (isset($_SESSION['nome'])) {
             break;
 
         case 'gravaAlterar':
-            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $_POST['foto_perfil']);
+            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $_POST['foto_perfil'],);
             $crud = new CrudAnimal();
             $mec = $crud->UpdateAnimal($animal);
             break;

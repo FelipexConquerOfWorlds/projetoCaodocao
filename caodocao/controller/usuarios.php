@@ -8,6 +8,7 @@ if (isset($_GET['acao'])){
 }
 
 require_once '../models/CrudUsuario.php';
+require_once '../models/login.php';
 
 switch ($acao){
     case'index':
@@ -50,6 +51,10 @@ switch ($acao){
         break;
 
      case 'login':
+         $login = new login();
+         $login->verificarCadastro($_POST['email'], $_POST['senha']);
+
+
 //        $sql = "select .... where login=";
 
         //se deu certo, grava os dados na sessão
