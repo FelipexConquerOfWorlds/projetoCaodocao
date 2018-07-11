@@ -19,7 +19,7 @@ class CrudAnimal
 
         $animal = $resultado->fetch(PDO::FETCH_ASSOC);
 
-        $objetoAnimal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_doacao'], $animal['cod_especie'], $animal['cod_usu'], $animal['cod_animal']);
+        $objetoAnimal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_doacao'], $animal['cod_especie'], $animal['cod_animal']);
 
         return $objetoAnimal;
     }
@@ -37,7 +37,7 @@ class CrudAnimal
                 $listaAnimais = [];
 
                 foreach ($animais as $animal){
-                    $animal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_especie'], $animal['cod_doacao'], $animal['cod_usu'], $animal['cod_animal']);
+                    $animal = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_especie'], $animal['cod_doacao'], $animal['cod_animal']);
                     $listaAnimais[] = $animal;
                 }
 
@@ -104,7 +104,7 @@ cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod
 
                 $resultado = array();
                 foreach ($res as $animal){
-                    $animala = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_especie'], $animal['cod_doacao'], $animal['cod_usu'], $animal['cod_animal']);
+                    $animala = new Animal($animal['nome'], $animal['datanascimento'], $animal['foto_perfil'], $animal['cod_raca'], $animal['cod_especie'], $animal['cod_doacao'], $animal['cod_animal']);
                     $resultado[] = $animala;
                 }
                 
