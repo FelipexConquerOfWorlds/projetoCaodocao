@@ -14,7 +14,6 @@ class Animal
     private $foto_perfil;
     private $cod_raca;
     private $cod_doacao;
-    private $cod_usu;
     private $cod_especie;
 
             public function __construct($nome, $datanascimento, $foto_perfil, $cod_raca, $cod_doacao, $cod_especie, $cod_animal)
@@ -140,21 +139,6 @@ class Animal
         $this->cod_doacao = $cod_doacao;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCodUsu()
-    {
-        return $this->cod_usu;
-    }
-
-    /**
-     * @param mixed $cod_usu
-     */
-    public function setCodUsu($cod_usu)
-    {
-        $this->cod_usu = $cod_usu;
-    }
 
 
 

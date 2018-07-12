@@ -4,9 +4,14 @@ require_once "Conexao.php";
 
 class CrudUsuario
 {
+    public function __construct()
+    {
+        $this->conexao = Conexao::getConexao();
+    }
+
+
     public function GetUsuarios()
     {
-        $this->conexao = DBConnection::getConexao;
 
         $sql = "select * from usuario";
 
@@ -28,7 +33,6 @@ class CrudUsuario
 
     public function GetUsuario(int $id)
     {
-        $this->conexao = DBConnection::getConexao;
 
         $sql = "select * from usuario where id ='{$id}'";
 
@@ -42,7 +46,6 @@ class CrudUsuario
     }
 
     public function CadastrarUsuario(Usuario $usuario){
-        $this->conexao = DBConnection::getConexao;
 
         $sql = "insert into usuario(nome, email, telefone, senha, cnpj, cod_cida) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getTelefone()}'.'{$usuario->getSenha()}','{$usuario->getCnpj()}','{$usuario->getCodCida()}')";
 
@@ -55,7 +58,6 @@ class CrudUsuario
     }
 
     public function UpdateUsuario(Usuario $usuario){
-        $this->conexao = DBConnection::getConexao;
 
         $sql = "update usuario SET nome ='{$usuario->getNome()}', email ='{$usuario->getEmail()}', telefone ='{$usuario->getTelefone()}'. senha ='{$usuario->getSenha()}', cnpj ='{$usuario->getCnpj()}', cod_cida ='{$usuario->getCodCida()}'";
 
@@ -68,7 +70,6 @@ class CrudUsuario
     }
 
     public function DeleteUsuario(int $id){
-        $this->conexao = DBConnection::getConexao();
 
         $sql = "delete from usuario where id ='{$id}'";
 

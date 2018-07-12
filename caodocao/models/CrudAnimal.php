@@ -1,6 +1,7 @@
 <?php
                         require_once "Conexao.php";
                         include_once("Animal.php");
+                        //verificar o cod_status nas consultas para pegar so os diponiveis
 class CrudAnimal
 {
     public $conexao;
@@ -11,9 +12,8 @@ class CrudAnimal
 
 
     public function GetAnimal(int $id){
-        $this->conexao = DBConnection::getConexao();
 
-        $sql = "select * from animal where cod_animal =".$id;
+        $sql = "select * from animal, doacao, status where cod_animal =".$id."and cod_status = 1";
 
         $resultado = $this->conexao->query($sql);
 
@@ -28,7 +28,7 @@ class CrudAnimal
 
 
 
-                $sql = "select * from animal";
+                $sql = "select * from animal, doacao, status where cod_status = 1";
 
                 $resultado = $this->conexao->query($sql);
 
@@ -45,10 +45,9 @@ class CrudAnimal
     }
 
     public function CadastrarAnimais(Animal $animal){
-                $this->conexao = DBConnection::getConexao;
                 //a foto no BD é apenas o endereço
 
-                $sql = "insert into animal (nome, datanascimento, foto_perfil, cod_especie, cod_raca, cod_doacao, cod_usu, cod_animal) values ('".$animal->getNome()."','".$animal->getDatanascimento()."','".$animal->getFotoPerfil()."','".$animal->getCodEspecie()."','".$animal->getCodRaca()."','".$animal->getCodDoacao()."','".$animal->getCodUsu()."','".$animal->getCodAnimal()."')";
+                $sql = "insert into animal (nome, datanascimento, foto_perfil, cod_especie, cod_raca, cod_doacao, cod_animal) values ('".$animal->getNome()."','".$animal->getDatanascimento()."','".$animal->getFotoPerfil()."','".$animal->getCodEspecie()."','".$animal->getCodRaca()."','".$animal->getCodDoacao()."','".$animal->getCodAnimal()."')";
 
                 try{
                     $this->conexao->exec($sql);
@@ -60,10 +59,9 @@ class CrudAnimal
     }
 
     public function UpdateAnimal(Animal $animal){
-                $this->conexao = DBConnection::getConexao;
 
                 $sql = "update animal SET nome = '{$animal->getNome()}', datanascimento = '{$animal->getDatanascimento()}', foto_perfil ='{$animal->getFotoPerfil()}', cod_especie ='{$animal->getCodEspecie()}' cod_raca = '{$animal->getCodRaca()}',
-cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod_animal = '{$animal->getCodAnimal()}'";
+cod_doacao ='{$animal->getCodDoacao()}', cod_animal = '{$animal->getCodAnimal()}'";
 
                 try{
                     $this->conexao->exec($sql);
@@ -74,7 +72,6 @@ cod_doacao ='{$animal->getCodDoacao()}', cod_usu = '{$animal->getCodUsu()}', cod
     }
 
     public function DeleteAnimal(int $id){
-                $this->conexao = DBConnection::getConexao;
 
                 $sql = "delete from animal where id = '{$id}'";
 
