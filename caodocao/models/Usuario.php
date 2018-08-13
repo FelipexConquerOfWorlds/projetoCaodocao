@@ -33,7 +33,7 @@ class Usuario
     }
 
     /**
-     * @param mixed $nome
+     * @param mixed $nomeusuarios
      */
     public function setNome($nome)
     {

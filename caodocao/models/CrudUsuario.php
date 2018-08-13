@@ -80,4 +80,13 @@ class CrudUsuario
             return $e->getMessage();
         }
     }
+
 }
+//
+//$r = new CrudUsuario();
+//
+//
+//$sla = new Usuario('sla','sla@gmail','40028922','senha123','1','0987654321');
+//
+//$r ->CadastrarUsuario($sla);
+//
