@@ -49,7 +49,7 @@ class CrudDoacao
     public function insertDoacao(Doacao $doacao)
     {
         //usar a funçao NOW() para data
-        $sql = "insert into doacao(data_doacao, data_cadastro, cod_usu, cod_status) values ($doacao->)";
+        $sql = "insert into doacao(data_doacao, data_cadastro, cod_usu, cod_status) values (CURDATE(), CURDATE(), '{$doacao->getCodUsu()}', '{$doacao->getCodStatus()}')";
 
         try {
             $this->conexao->exec($sql);
@@ -60,7 +60,7 @@ class CrudDoacao
     }
 
     public function updateDoacao(Doacao $doacao){
-        $sql = "update ";
+        $sql = "update doacao SET data_doacao = '{$doacao->getDataDoacao()}', data_cadastro = '{$doacao->getDataCadastro()}', cod_usu = '{$doacao->getCodUsu()}', cod_status = '{$doacao->getCodStatus()}'";
 
         try{
             $this->conexao->exec($sql);

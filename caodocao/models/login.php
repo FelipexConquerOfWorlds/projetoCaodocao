@@ -21,26 +21,25 @@ class login
 
                 $dados = $resultado->fetch(PDO::FETCH_ASSOC);
 
-                $sucesso = false;
+                $erro = false;
 
                         if ($dados['qtd'] != '1'){
-                            return $sucesso;
+                            return $erro;
 
                         } else {
                                     $sql = "select * from usuario where senha = '{$senha}' and email = '{$email}'";
                                     $resulSenha = $this->conexao->query($sql);
                                     $usuario = $resulSenha->fetch(PDO::FETCH_ASSOC);
 
-                                            if ($resulSenha != '1') {
-                                                return $sucesso;
+                                            if (empty($resulSenha)) {
+                                                return $erro;
 
                                             } else {
 
-                                                $sucesso = true;
 
-                                                $objUsu = new Usuario($usuario['']);
+                                                $objUsu = new Usuario($usuario['nome'], $usuario['email'], $usuario['cod_usu'], $usuario['cnpj'], $usuario['senha'], $usuario['telefone'], $usuario['cod_cida'], $usuario['cd_tipuser']);
 
-                                                return $usuario;
+                                                return $objUsu;
 
                                             }
 
