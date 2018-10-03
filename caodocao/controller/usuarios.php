@@ -11,11 +11,11 @@ require_once '../models/CrudUsuario.php';
 require_once '../models/login.php';
 
 switch ($acao){
-    case 'deslogado':
+     case 'deslogado':
      include '../views/loginusu.html';
+     break;
 
-        break;
-    case'index':
+     case'index':
 
     $crud = new CrudUsuario();
     $usuarios = $crud->GetUsuarios();
