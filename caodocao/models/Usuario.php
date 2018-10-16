@@ -12,7 +12,7 @@ class Usuario
         private $cod_cida;
         private $cd_tipuser;
 
-            public function __construct($nome, $email, $cnpj, $senha, $cod_cida, $telefone, $cod_usu = null , $cd_tipuser = null)
+            public function __construct($nome = null, $email = null, $cnpj = null, $senha = null, $cod_cida = null, $telefone = null, $cod_usu = null , $cd_tipuser = null)
             {
                 $this->nome = $nome;
                 $this->email = $email;

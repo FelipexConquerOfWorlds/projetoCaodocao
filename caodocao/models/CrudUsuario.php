@@ -1,4 +1,5 @@
 <?php
+
 require_once "Usuario.php";
 require_once "Conexao.php";
 
@@ -47,7 +48,7 @@ class CrudUsuario
 
     public function CadastrarUsuario(Usuario $usuario){
 
-        $sql = "insert into usuario (nome, email, cnpj, senha, telefone, cod_cida) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getCnpj()}','{$usuario->getSenha()}','{$usuario->getTelefone()}','{$usuario->getCodCida()}')";
+        $sql = "insert into usuario (nome, email, cnpj, senha, telefone, cod_cida, cod_usu, cd_tipuser) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getCnpj()}','{$usuario->getSenha()}','{$usuario->getTelefone()}','{$usuario->getCodCida()}','{$usuario->getCodUsu()}','')";
 
         try{
             $this->conexao->exec($sql);
@@ -59,7 +60,7 @@ class CrudUsuario
 
     public function UpdateUsuario(Usuario $usuario){
 
-        $sql = "update usuario SET nome ='{$usuario->getNome()}', email ='{$usuario->getEmail()}', telefone ='{$usuario->getTelefone()}' ,senha ='{$usuario->getSenha()}', cnpj ='{$usuario->getCnpj()}', cod_cida ='{$usuario->getCodCida()}'";
+        $sql = "update usuario SET nome ='{$usuario->getNome()}', email ='{$usuario->getEmail()}', telefone ='{$usuario->getTelefone()}' ,senha ='{$usuario->getSenha()}', cnpj ='{$usuario->getCnpj()}', cod_cida ='{$usuario->getCodCida()}', cod_usu ='{$usuario->getCodUsu()}', cd_tipuser = '{$usuario->getCdTipuser()}'";
 
         try{
             $this->conexao->exec($sql);
@@ -90,4 +91,4 @@ class CrudUsuario
 //
 //$r ->CadastrarUsuario($sla);
 //
-
+?>

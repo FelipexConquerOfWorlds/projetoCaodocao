@@ -16,7 +16,7 @@ class Animal
     private $cod_doacao;
     private $cod_especie;
 
-            public function __construct($nome, $datanascimento, $foto_perfil, $cod_raca, $cod_doacao, $cod_especie, $cod_animal)
+            public function __construct($nome = null, $datanascimento = null, $foto_perfil = null, $cod_raca = null, $cod_doacao = null, $cod_especie = null, $cod_animal = null)
             {
                 $this->nome = $nome;
                 $this->datanascimento = $datanascimento;
