@@ -11,9 +11,7 @@ require_once '../models/CrudUsuario.php';
 require_once '../models/login.php';
 
 switch ($acao){
-     case 'deslogado':
-     include '../views/loginusu.html';
-     break;
+
 
      case'index':
 
@@ -22,18 +20,15 @@ switch ($acao){
     include '../views/usuario.php';
     break;
 
-    case 'exibir':
-        $crud = new CrudUsuario();
-        $usuario = $crud->GetUsuario($_GET['id']);
-        break;
 
     case 'inserir':
         include '../views/usuarios/inserir.php';
     break;
 
-    case 'cadastrar_anm':
-        include '../views/animalcad.html';
+    case 'doar':
+    include '../views/login.html';
     break;
+
 
     case 'gravaInserir':
         $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha']);
@@ -58,9 +53,20 @@ switch ($acao){
         $apaga = $crud->DeleteUsuario($_GET['id']);
         break;
 
-     case 'login':
+    case 'login':
+    include '../views/login.html';
+
+     case 'Gravalogin':
          $login = new login();
          $login->verificarCadastro($_POST['email'], $_POST['senha']);
+         if ($login == false) {
+             //mudar essa pagina para login.html com mensagem de inseriu dados invalidos junto
+             include '../view/login.html';
+         } else {
+             //perguntar ao jeffinho como perpetuar os dados da session q eu criei na funçao login para filtrar as paginas por nivel de usuario,
+             header('location:sfdklogado.php') ;
+         }
+            break;
 
 
 //        $sql = "select .... where login=";
