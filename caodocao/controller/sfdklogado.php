@@ -30,17 +30,21 @@
                 include '../views/viewanimal.html';
                 break;
 
-                //case se o cara quiser o animal que ele acabou de vizualizar
-
+                case 'queroAdotar':
+                    //case se o cara quiser o animal que ele acabou de vizualizar
+                    //iniciar o chat quando apertado esse botao
+                    
                 case 'doar':
                 include '../views/animalcad.html';
                 break;
 
                 case 'gravaDoar':
                 $a = new Animal($_POST['nome'], $_POST['datanascimento'], $_POST['foto_perfil'], $_POST['cod_especie'], $_POST['cod_raca'];
-
-
-
+                $crudDoa = new CrudDoacao();
+                $crudAni = new CrudAnimal();
+                $crudAni->CadastrarAnimais($a);
+                $d = new Doacao($_SESSION['cod_usu'], 1);
+                $crudDoa->insertDoacao($d);
             }
 
 
