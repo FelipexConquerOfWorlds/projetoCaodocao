@@ -3,7 +3,7 @@ session_start();
 /**
 CONTROLADOR DO CRUD DE ANIMAIS */
 
-if (isset($_SESSION['nome'])) {
+//if (isset($_SESSION['nome'])) {
 
     if (isset($_GET['acao'])) {
         $acao = $_GET['acao'];
@@ -20,7 +20,7 @@ if (isset($_SESSION['nome'])) {
         case 'index':
             $crud = new CrudAnimal();
             $animais = $crud->GetAnimais();
-            include '../views/animais/index.php';
+            include '../views/index.php';
 
             break;
         case 'exibir': //vai ter que ser com a funcao filtrar animais
@@ -45,7 +45,7 @@ if (isset($_SESSION['nome'])) {
             //move_uploaded_file($origem, $destino);
 
 
-            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $destino,);
+            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $destino);
             $crud = new CrudAnimal();
             $mec = $crud->CadastrarAnimais($animal);
             //recebe os dados do FORM via POST
@@ -58,7 +58,7 @@ if (isset($_SESSION['nome'])) {
             break;
 
         case 'gravaAlterar':
-            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $_POST['foto_perfil'],);
+            $animal = new Animal($_POST['nome'], $_POST['dtnasc'], $_POST['foto_perfil']);
             $crud = new CrudAnimal();
             $mec = $crud->UpdateAnimal($animal);
             break;
@@ -73,6 +73,6 @@ if (isset($_SESSION['nome'])) {
 
     }
 
-}else{
+/*}else{
     echo "acesso negado";
-}
+}*/
