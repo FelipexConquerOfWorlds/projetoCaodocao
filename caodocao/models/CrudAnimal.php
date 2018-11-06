@@ -13,7 +13,7 @@ class CrudAnimal
 
     public function GetAnimal(int $id){
 
-        $sql = "select * from animal, doacao, status where cod_animal =".$id."and cod_status = 1";
+        $sql = "select * from animal, doacao, statusdoacao where cod_animal =".$id."and statusdoacao.cod_status = 1";
 
         $resultado = $this->conexao->query($sql);
 
@@ -28,7 +28,7 @@ class CrudAnimal
 
 
 
-                $sql = "select * from animal, doacao, status where cod_status = 1";
+                $sql = "select * from animal, doacao, statusdoacao where statusdoacao.cod_status = 1";
 
                 $resultado = $this->conexao->query($sql);
 
