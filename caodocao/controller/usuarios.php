@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['acao'])){
+/*if (isset($_GET['acao'])){
     $acao = $_GET['acao'];
 }else{
     $acao = 'index';
@@ -26,7 +26,7 @@ switch ($acao){
     break;
 
     case 'doar':
-    include '../views/login.html';
+    include '../views/login.php';
     break;
 
 
@@ -54,14 +54,14 @@ switch ($acao){
         break;
 
     case 'login':
-    include '../views/login.html';
+    include '../views/login.php';
 
      case 'Gravalogin':
          $login = new login();
          $login->verificarCadastro($_POST['email'], $_POST['senha']);
          if ($login == false) {
-             //mudar essa pagina para login.html com mensagem de inseriu dados invalidos junto
-             include '../view/login.html';
+             //mudar essa pagina para login.php com mensagem de inseriu dados invalidos junto
+             include '../view/login.php';
          } else {
              //perguntar ao jeffinho como perpetuar os dados da session q eu criei na funçao login para filtrar as paginas por nivel de usuario,
              header('location:sfdklogado.php') ;
@@ -76,4 +76,4 @@ switch ($acao){
     //    grava todas as informaçõpes que quiser
     //redireciona
 
-}
+}*/

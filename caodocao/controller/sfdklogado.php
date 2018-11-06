@@ -19,15 +19,15 @@
             switch ($acao) {
 
                 case 'index':
-                include '../views/indexlogado.html';
+                include '../views/indexlogado.php';
                 break;
 
                 case 'adotar':
-                include '../views/adotar.html';
+                include '../views/adotar.php';
                 break;
 
                 case 'verAnimal':
-                include '../views/viewanimal.html';
+                include '../views/viewanimal.php';
                 break;
 
                 case 'queroAdotar':
@@ -35,11 +35,11 @@
                     //iniciar o chat quando apertado esse botao
                     
                 case 'doar':
-                include '../views/animalcad.html';
+                include '../views/animalcad.php';
                 break;
 
                 case 'gravaDoar':
-                $a = new Animal($_POST['nome'], $_POST['datanascimento'], $_POST['foto_perfil'], $_POST['cod_especie'], $_POST['cod_raca'];
+                $a = new Animal($_POST['nome'], $_POST['datanascimento'], $_POST['foto_perfil'], $_POST['cod_especie'], $_POST['cod_raca']);
                 $crudDoa = new CrudDoacao();
                 $crudAni = new CrudAnimal();
                 $crudAni->CadastrarAnimais($a);
@@ -52,7 +52,7 @@
 
         case'2':
         //admin tela unica
-            include '../views/admin.html';
+            include '../views/admin.php';
 
         case '1':
         //admin master tela unica

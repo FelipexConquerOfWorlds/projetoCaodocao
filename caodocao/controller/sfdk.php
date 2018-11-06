@@ -15,11 +15,11 @@ require_once "../models/login.php";
 switch ($acao) {
 
     case 'index';
-        include '../views/index.html';
+        include '../views/index.php';
         break;
 
     case 'registrar';
-        include '../views/cadastro.html';
+        include '../views/cadastro.php';
         break;
 
     case 'registrardf';
@@ -29,15 +29,15 @@ switch ($acao) {
         break;
 
     case 'login';
-        include '../views/login.html';
+        include '../views/login.php';
         break;
 
     case 'logindf';
         $login = new login();
         $login->verificarCadastro($_POST['email'], $_POST['senha']);
         if ($login == false) {
-         //mudar essa pagina para login.html com mensagem de inseriu dados invalidos junto
-            include '../view/login.html';
+         //mudar essa pagina para login.php com mensagem de inseriu dados invalidos junto
+            include __DIR__. '/../views/login.php';
         } else {
            //perguntar ao jeffinho como perpetuar os dados da session q eu criei na funçao login para filtrar as paginas por nivel de usuario,
             include 'sfdklogado.php';
