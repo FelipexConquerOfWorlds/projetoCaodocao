@@ -27,5 +27,3 @@ class Conexao
         }
 }
 
-$c = new Conexao();
-$c->getConexao();
