@@ -1,10 +1,19 @@
 <?php
+
+    if (!isset($_SESSION)){
+        session_start();
+    }
+
+
+
     include_once '../models/CrudAnimal.php';
     include_once '../models/CrudDoacao.php';
     include_once '../models/CrudUsuario.php';
-    include_once '../models/login.php';
+    include_once '../models/Login.php';
 
     $tipo_usuario = $_SESSION['cd_tipuser'];
+
+    var_dump($tipo_usuario);
 
     switch ($tipo_usuario){
 

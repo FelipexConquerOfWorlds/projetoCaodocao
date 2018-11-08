@@ -1,7 +1,7 @@
 <?php
 
 
-    session_start();
+session_start();
 
 if (isset($_GET['acao'])){
     $acao = $_GET['acao'];
@@ -10,7 +10,7 @@ if (isset($_GET['acao'])){
 
 }
 
-require_once "../models/login.php";
+require_once "../models/Login.php";
 
 switch ($acao) {
 
@@ -33,13 +33,16 @@ switch ($acao) {
         break;
 
     case 'logindf';
-        $login = new login();
-        $login->verificarCadastro($_POST['email'], $_POST['senha']);
-        if ($login == false) {
-         //mudar essa pagina para login.php com mensagem de inseriu dados invalidos junto
-            include __DIR__. '/../views/login.php';
-        } else {
-           //perguntar ao jeffinho como perpetuar os dados da session q eu criei na funçao login para filtrar as paginas por nivel de usuario,
-            include 'sfdklogado.php';
+        try {
+
+            $login = new Login();
+
+            $login->verificarCadastro($_POST['email'], $_POST['password']);
+
+            header('location:sfdklogado.php');
+
+        } catch (Exception $e){
+            header("location: http://localhost/projetoCaodocao-master/caodocao/controller/sfdk.php?acao=login&msg={$e->getMessage()}");
         }
+
 }
