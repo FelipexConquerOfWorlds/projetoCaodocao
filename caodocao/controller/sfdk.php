@@ -19,11 +19,11 @@ switch ($acao) {
         break;
 
     case 'registrar';
-        include '../views/cadastro.php';
+        include '../views/cadastro.html';
         break;
 
     case 'registrardf';
-        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['cnpj'], $_POST['cod_cida'], $_POST['cod_usu']);
+        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['cpf']/*, $_POST['estados_brasil']*/);
         $crud = new CrudUsuario();
         $crud->CadastrarUsuario($usuario);
         break;
