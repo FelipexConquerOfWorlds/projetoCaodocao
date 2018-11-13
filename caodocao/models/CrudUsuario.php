@@ -5,6 +5,9 @@ require_once "Conexao.php";
 
 class CrudUsuario
 {
+    public $conexao;
+
+
     public function __construct()
     {
         $this->conexao = Conexao::getConexao();
