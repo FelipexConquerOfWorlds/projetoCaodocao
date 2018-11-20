@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 14/08/2018 às 14:16
--- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
+-- Tempo de geração: 20/11/2018 às 14:22
+-- Versão do servidor: 5.7.22-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.30-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -5933,6 +5933,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Fazendo dump de dados para tabela `usuario`
+--
+
+INSERT INTO `usuario` (`nome`, `email`, `cod_usu`, `cnpj`, `senha`, `telefone`, `cod_cida`, `cd_tipuser`) VALUES
+('Guilherme Cipriano', 'guilherme.cp@live.com', 5, NULL, 'cipriano', '40028922', 4749, 1);
+
+--
 -- Índices de tabelas apagadas
 --
 
@@ -6085,7 +6092,7 @@ ALTER TABLE `tip_user`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restrições para dumps de tabelas
 --
