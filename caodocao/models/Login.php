@@ -19,15 +19,21 @@ class Login {
 
     private function emailExists($email) {
 
-        $sql = "select count(email) as qtd from usuario where email = '{$email}'";
+        $sql = "select count(email) from usuario where email = '{$email}'";
         $resultado = $this->conexao->query($sql)->fetch(PDO::FETCH_ASSOC);
 
-        if ($resultado['qtd'] > 0) {
+        if ($resultado['email'] > 0) {
             return true;
         }
 
         return false;
 
+    }
+
+    public static function islogado(){
+        if(!isset($_SESSION['cod_usu'])){
+            header('Location: ../views/login.php');
+        }
     }
 
     public function verificarCadastro($email, $senha){
