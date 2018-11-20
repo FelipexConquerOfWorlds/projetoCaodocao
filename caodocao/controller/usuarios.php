@@ -1,5 +1,15 @@
 <?php
 
+
+function editarUsuario(){
+
+}
+
+
+switch ($acao){
+    case "editar":
+        EditarUsuario();
+}
 /*if (isset($_GET['acao'])){
     $acao = $_GET['acao'];
 }else{

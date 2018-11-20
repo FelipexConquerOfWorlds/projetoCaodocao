@@ -1,5 +1,8 @@
 <?php
 
+include_once __DIR__."/../models/Login.php";
+login::islogado();
+
     if (!isset($_SESSION)){
         session_start();
     }
