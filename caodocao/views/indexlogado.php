@@ -10,10 +10,10 @@
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="#">
         <img src="img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
       <a class="navbar-brand" href="#">
-        <b href="index.html" style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:repeat;" class="w-75"> </b>
+        <b style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:repeat;" class="w-75"> </b>
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -22,21 +22,24 @@
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="login.html">
-          <i class="fa d-inline fa-lg fa-user-circle-o"></i> Login</a>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="cadastro.html">
-          <i class="fa d-inline fa-lg fa-sign-in"></i> Cadastrar-se</a>
+        <a class="btn navbar-btn ml-2 text-white btn-warning" href="#">
+          <i class="fa d-inline fa-lg fa-user-circle-o"></i> perfil</a>
+        <a class="btn navbar-btn ml-2 text-white btn-warning" href="#">
+          <i class="fa d-inline fa-lg fa-github"></i> Animais</a>
+        <a class="btn navbar-btn ml-2 text-white btn-warning" href="blank.html">
+          <i class="fa d-inline fa-lg fa-reply-all"></i> Sign out</a>
       </div>
     </div>
   </nav>
-  <div class="py-5 text-center" style="background-image: url('img/portfolio/placeholder-2.png');background-size:cover;">
+  <div class="py-5 text-center" style="background-image: url(&quot;img/portfolio/placeholder-2.png&quot;); background-size: cover;">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-3 mb-4 text-black">Cãodoção</h1>
-          <p class="lead mb-5 " style="color:yellow;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis delectus doloremque, dolores doloribus labore minima molestiae, mollitia odit omnis pariatur unde. Blanditiis maiores mollitia omnis, quia recusandae sed voluptatem. </p>
-          <a href="adotar.php" class="btn btn-lg mx-1 btn-warning text-dark">Adotar</a>
-          <a href="../controller/usuarios.php?acao=deslogado" class="btn btn-lg btn-warning mx-1 text-dark">Doar</a>
+          <h1 class="display-3 mb-4 text-white">Hero image intro</h1>
+          <p class="lead mb-5 text-white">Pingendo is a HTML editor for everyone. Easy for newbies, useful for professionals.
+            <br>Code quality is a must. Pingendo generates clean, battle-tested, modular Bootstrap 4 code. </p>
+          <a href="#" class="btn btn-lg mx-1 btn-warning text-white">Adotar</a>
+          <a href="../controller/usuarios.php?acao=cadastar_anm" class="btn btn-lg btn-warning mx-1 text-white">Doar</a>
         </div>
       </div>
     </div>
@@ -54,7 +57,7 @@
       </div>
     </div>
   </div>
-  <div class=" bg-warning">
+  <div class="py-5 bg-warning">
     <div class="container">
       <div class="row">
         <div class="col-md-6 align-self-center bg-dark   ">
@@ -70,8 +73,7 @@
       </div>
     </div>
   </div>
-  <div class=" bg-warning">
-
+  <div class="py-5 bg-warning">
     <div class="container bg-dark">
       <div class="row mb-5">
         <div class="col-md-6 bg-dark       offset-md-1" style="transition: all 0.25s;">
@@ -93,7 +95,7 @@
       </div>
     </div>
   </div>
-  <div class=" bg-warning">
+  <div class="py-5 bg-warning">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12 bg-dark">

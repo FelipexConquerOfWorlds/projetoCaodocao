@@ -10,10 +10,10 @@
 <body class="bg-warning">
   <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="../index.php">
+      <a class="navbar-brand" href="#">
         <img src="img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
       <a class="navbar-brand" href="#">
-        <b style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:re" class="w-75"> </b>
+        <b style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:repeat;" class="w-75"> </b>
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../index.php">
+        <a class="btn navbar-btn ml-2 text-white btn-warning" href="index.html">
           <i class="fa d-inline fa-lg fa-reply-all"></i> Página Inicial</a>
       </div>
     </div>
@@ -34,13 +34,19 @@
         <div class="col-md-6">
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
-              <h1 class="mb-4">Login</h1>
-              <form method="post" action="sfdk.php?acao=logindf">
+              <h1 class="mb-4 w-75">Cadastre-se seu Animal </h1>
+              <img class="img-fluid d-block p-2" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg">
+              <form action="https://formspree.io/YOUREMAILHERE">
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="Email"> </div>
+                  <label></label>
+                  <input type="text" class="form-control" placeholder="Nome"> </div>
                 <div class="form-group">
-                  <input name="password" type="password" class="form-control" placeholder="Senha"> </div>
-                  <button type="submit" class="btn btn-warning w-25">Confirmar</button>
+                  <input type="text" class="form-control" placeholder="Data de nascimento"> </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Raça"> </div>
+                <div class="form-group">
+                  <input type="text" class="form-control p-4 text-uppercase" placeholder="descrição"> </div>
+                <button type="submit" class="btn btn-warning">Cadastrar</button>
               </form>
             </div>
           </div>
