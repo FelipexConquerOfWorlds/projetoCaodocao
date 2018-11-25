@@ -10,11 +10,12 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-light bg-dark">
+  <nav class="navbar navbar-expand-md navbar-light bg-dark" style=" margin-bottom: 0px;">
 
-      <div class="container">
+      <div class="container" >
 
-      <a class="navbar-brand" href="#">
+
+      <a class="navbar-brand" href="../index.php">
         <img src="img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60">
       </a>
 
@@ -32,10 +33,10 @@
           <li class="nav-item"> </li>
         </ul>
         <a class="btn navbar-btn ml-2 text-white btn-warning" href="#">
-          <i class="fa d-inline fa-lg fa-user-circle-o"></i>ADMINISTRATIVO</a>
+          <i class="fa d-inline fa-lg fa-user-circle-o"></i>Administrativo</a>
         <a class="btn navbar-btn ml-2 text-white btn-warning" href="#">
           <i class="fa d-inline fa-lg fa-github"></i>Animal</a>
-        <a class="btn navbar-btn ml-2 text-white btn-warning" href="blank.html">
+        <a class="btn navbar-btn ml-2 text-white btn-warning" href="../index.php">
           <i class="fa d-inline fa-lg fa-reply-all"></i>Sign out</a>
       </div>
 
@@ -54,9 +55,9 @@
               <thead>
               <tr>
 
-                  <th scope="col">Ação</th>
-                  <th scope="col">Nome</th>
-                  <th scope="col">Email</th>
+                  <th scope="col" style="text-align: center">Ação</th>
+                  <th scope="col" style="text-align: center">Nome</th>
+                  <th scope="col" style="text-align: center">Email</th>
               </tr>
               </thead>
 
@@ -64,6 +65,7 @@
               <?php
 
               include_once __DIR__."/../models/CrudUsuario.php";
+              include_once __DIR__."/../models/Usuario.php";
 
               $crudUsuario = new CrudUsuario();
               $usuarios    = $crudUsuario->GetUsuarios();
@@ -76,11 +78,11 @@
 
               <tr>
                   <td scope="">
-                      <a href="controladorUsuario.php?acao=editar&idusuario=<?=$usuario->getCodUsu();?>" class="btn btn-success">Editar</a>
-                      <a href="controladorUsuario.php?acao=banir&idusuario=codigoUsuario" class="btn btn-danger">Banir</a>
+                      <a href="../models/Usuario.php?acao=editar&idusuario=<?=$usuario->getCodUsu();?>" class="btn btn-success" style="column-span: initial">Editar</a>
+                      <a href="../models/Usuario.php?acao=banir&idusuario=codigoUsuario" class="btn btn-danger">Banir</a>
                   </td>
 
-                  <td"><?=$usuario->getNome();?></td>
+                  <td><?=$usuario->getNome();?></td>
                   <td><?=$usuario->getEmail();?></td>
               </tr>
 

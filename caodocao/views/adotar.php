@@ -10,8 +10,8 @@
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
+      <a class="navbar-brand" href="../index.php">
+        <img src="../views/img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
       <a class="navbar-brand" href="#">
         <b style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:repeat;" class="w-75"> </b>
       </a>
@@ -22,9 +22,9 @@
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="login.html">
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../views/login.php">
           <i class="fa d-inline fa-lg fa-user-circle-o"></i> Login</a>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="cadastro.html">
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../views/cadastro.html">
           <i class="fa d-inline fa-lg fa-reply-all"></i> Cadastrar-se</a>
       </div>
     </div>
@@ -62,74 +62,74 @@
       </div>
       <div class="row">
         <div class="col-md-3 col-6 p-1">
-          <a href="viewanimal.php">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-2.png"> </a>
+          <a href="../views/viewanimal.php">
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-2.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-4.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-4.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-10.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-10.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-7.png"> </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-6 p-1">
-          <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-8.png"> </a>
-        </div>
-        <div class="col-md-3 col-6 p-1">
-          <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-9.png"> </a>
-        </div>
-        <div class="col-md-3 col-6 p-1">
-          <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder.png"> </a>
-        </div>
-        <div class="col-md-3 col-6 p-1">
-          <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-11.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-7.png"> </a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-3.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-8.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-5.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-9.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-12.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/placeholder-6.png"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-11.png"> </a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/5a619b043c40c6c846e25bf41db7eebe.jpg"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-3.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/REINOUNIDO_serialkiller_gatos_pexels-126407.jpg"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-5.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/images (1).jpg"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-12.png"> </a>
         </div>
         <div class="col-md-3 col-6 p-1">
           <a href="#">
-            <img class="d-block img-fluid" src="img/portfolio/síntomas-de-moquillo-en-gatos_opt.jpg"> </a>
+            <img class="d-block img-fluid" src="../views/img/portfolio/placeholder-6.png"> </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-6 p-1">
+          <a href="#">
+            <img class="d-block img-fluid" src="../views/img/portfolio/5a619b043c40c6c846e25bf41db7eebe.jpg"> </a>
+        </div>
+        <div class="col-md-3 col-6 p-1">
+          <a href="#">
+            <img class="d-block img-fluid" src="../views/img/portfolio/REINOUNIDO_serialkiller_gatos_pexels-126407.jpg"> </a>
+        </div>
+        <div class="col-md-3 col-6 p-1">
+          <a href="#">
+            <img class="d-block img-fluid" src="../views/img/portfolio/images (1).jpg"> </a>
+        </div>
+        <div class="col-md-3 col-6 p-1">
+          <a href="#">
+            <img class="d-block img-fluid" src="../views/img/portfolio/síntomas-de-moquillo-en-gatos_opt.jpg"> </a>
         </div>
       </div>
     </div>

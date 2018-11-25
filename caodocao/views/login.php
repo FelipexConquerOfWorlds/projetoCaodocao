@@ -11,7 +11,7 @@
   <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <div class="container">
       <a class="navbar-brand" href="../index.php">
-        <img src="img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
+        <img src="../views/img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
       <a class="navbar-brand" href="#">
         <b style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:re" class="w-75"> </b>
       </a>
@@ -35,7 +35,7 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">Login</h1>
-              <form method="post" action="sfdk.php?acao=logindf">
+              <form method="post" action="../controller/sfdk.php?acao=logindf">
                 <div class="form-group">
                   <input name="email" type="email" class="form-control" placeholder="Email"> </div>
                 <div class="form-group">
