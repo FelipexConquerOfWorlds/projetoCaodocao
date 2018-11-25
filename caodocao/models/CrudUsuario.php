@@ -11,6 +11,7 @@ class CrudUsuario
     public function __construct()
     {
         $this->conexao = Conexao::getConexao();
+
     }
 
 
@@ -51,14 +52,16 @@ class CrudUsuario
 
     public function CadastrarUsuario(Usuario $usuario){
 
-        $sql = "insert into usuario (nome, email, cnpj, senha, telefone, cod_cida, cod_usu, cd_tipuser) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getCnpj()}','{$usuario->getSenha()}','{$usuario->getTelefone()}','{$usuario->getCodCida()}','{$usuario->getCodUsu()}','')";
+        $sql = "insert into usuario (nome, email, cnpj, senha, telefone, cod_cida, cod_usu, cd_tipuser) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getCnpj()}','{$usuario->getSenha()}','{$usuario->getTelefone()}','{$usuario->getCodCida()}','{$usuario->getCodUsu()}',)";
 
         try{
-            $this->conexao->exec($sql);
+            $this->conexao-> exec($sql);
 
         }catch (PDOException $e){
             return $e->getMessage();
         }
+        header('location: ../views/login.php');
+
     }
 
     public function UpdateUsuario(Usuario $usuario){

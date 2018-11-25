@@ -13,7 +13,7 @@ class login
         }
 
         public function verificarCadastro($email, $senha){
-                $this->conexao = DBConnection::getConexao;
+                $this->conexao = conexao::getConexao();
 
                 $sql = "select count(email) as qtd from usuario where email = '{$email}'";
 
@@ -59,7 +59,7 @@ class login
 
 
         public function tipouser($email){
-            $this->conexao = DBConnection::getConexao;
+            $this-> conexao = conexao::getConexao();
 
             $sql = "select cd_tipuser from tip_user, usuario where email = '{$email}'";
 

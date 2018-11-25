@@ -5,7 +5,7 @@ class Conexao
         const HOST = "localhost";
         const DBNAME = "caodocao";
         const USUARIO = "root";
-        const SENHA = "root";
+        const SENHA = "";
 
 
         public static $conexao = null;
