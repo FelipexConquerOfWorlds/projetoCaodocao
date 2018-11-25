@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 20/11/2018 às 14:22
--- Versão do servidor: 5.7.22-0ubuntu0.16.04.1
--- Versão do PHP: 7.0.30-0ubuntu0.16.04.1
+-- Host: 127.0.0.1
+-- Generation Time: 25-Nov-2018 às 21:47
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `caodocao`
+-- Database: `caodocao`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `animal`
+-- Estrutura da tabela `animal`
 --
 
 CREATE TABLE `animal` (
@@ -38,7 +40,7 @@ CREATE TABLE `animal` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `chat`
+-- Estrutura da tabela `chat`
 --
 
 CREATE TABLE `chat` (
@@ -52,7 +54,7 @@ CREATE TABLE `chat` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cidade`
+-- Estrutura da tabela `cidade`
 --
 
 CREATE TABLE `cidade` (
@@ -62,7 +64,7 @@ CREATE TABLE `cidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `cidade`
+-- Extraindo dados da tabela `cidade`
 --
 
 INSERT INTO `cidade` (`cod_cida`, `nome`, `cod_esta`) VALUES
@@ -5636,7 +5638,7 @@ INSERT INTO `cidade` (`cod_cida`, `nome`, `cod_esta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `comentario`
+-- Estrutura da tabela `comentario`
 --
 
 CREATE TABLE `comentario` (
@@ -5649,7 +5651,7 @@ CREATE TABLE `comentario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `doacao`
+-- Estrutura da tabela `doacao`
 --
 
 CREATE TABLE `doacao` (
@@ -5663,7 +5665,7 @@ CREATE TABLE `doacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `especie`
+-- Estrutura da tabela `especie`
 --
 
 CREATE TABLE `especie` (
@@ -5672,7 +5674,7 @@ CREATE TABLE `especie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `especie`
+-- Extraindo dados da tabela `especie`
 --
 
 INSERT INTO `especie` (`descricao`, `cod_especie`) VALUES
@@ -5683,7 +5685,7 @@ INSERT INTO `especie` (`descricao`, `cod_especie`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `estado`
+-- Estrutura da tabela `estado`
 --
 
 CREATE TABLE `estado` (
@@ -5693,7 +5695,7 @@ CREATE TABLE `estado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `estado`
+-- Extraindo dados da tabela `estado`
 --
 
 INSERT INTO `estado` (`cod_esta`, `nome`, `sigla`) VALUES
@@ -5728,7 +5730,7 @@ INSERT INTO `estado` (`cod_esta`, `nome`, `sigla`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `fotosanimal`
+-- Estrutura da tabela `fotosanimal`
 --
 
 CREATE TABLE `fotosanimal` (
@@ -5741,7 +5743,7 @@ CREATE TABLE `fotosanimal` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `raca`
+-- Estrutura da tabela `raca`
 --
 
 CREATE TABLE `raca` (
@@ -5751,7 +5753,7 @@ CREATE TABLE `raca` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `raca`
+-- Extraindo dados da tabela `raca`
 --
 
 INSERT INTO `raca` (`descricao`, `cod_raca`, `cod_especie`) VALUES
@@ -5866,7 +5868,7 @@ INSERT INTO `raca` (`descricao`, `cod_raca`, `cod_especie`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sessao`
+-- Estrutura da tabela `sessao`
 --
 
 CREATE TABLE `sessao` (
@@ -5879,7 +5881,7 @@ CREATE TABLE `sessao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `statusdoacao`
+-- Estrutura da tabela `statusdoacao`
 --
 
 CREATE TABLE `statusdoacao` (
@@ -5888,7 +5890,7 @@ CREATE TABLE `statusdoacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `statusdoacao`
+-- Extraindo dados da tabela `statusdoacao`
 --
 
 INSERT INTO `statusdoacao` (`cod_status`, `descricao`) VALUES
@@ -5898,7 +5900,7 @@ INSERT INTO `statusdoacao` (`cod_status`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tip_user`
+-- Estrutura da tabela `tip_user`
 --
 
 CREATE TABLE `tip_user` (
@@ -5907,18 +5909,19 @@ CREATE TABLE `tip_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `tip_user`
+-- Extraindo dados da tabela `tip_user`
 --
 
 INSERT INTO `tip_user` (`desc_tipuser`, `cd_tipuser`) VALUES
 ('adminMaster', 1),
-('Admin', 2),
-('usuario', 3);
+('Não Registrado', 2),
+('Admin', 3),
+('Usuario', 4);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -5933,18 +5936,19 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`nome`, `email`, `cod_usu`, `cnpj`, `senha`, `telefone`, `cod_cida`, `cd_tipuser`) VALUES
-('Guilherme Cipriano', 'guilherme.cp@live.com', 5, NULL, 'cipriano', '40028922', 4749, 1);
+('Darth Vader', 'darthvader@hotmail.com', 21, '123456789', 'senha', '123456789', 44, 4),
+('sla', 'sla@sla', 30, '123456798', 'senha', '123456789', 44, 4);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `animal`
+-- Indexes for table `animal`
 --
 ALTER TABLE `animal`
   ADD PRIMARY KEY (`cod_animal`),
@@ -5952,7 +5956,7 @@ ALTER TABLE `animal`
   ADD KEY `cod_raca` (`cod_raca`);
 
 --
--- Índices de tabela `chat`
+-- Indexes for table `chat`
 --
 ALTER TABLE `chat`
   ADD KEY `idsessao` (`idsessao`),
@@ -5960,21 +5964,21 @@ ALTER TABLE `chat`
   ADD KEY `cod_usuR` (`cod_usuR`);
 
 --
--- Índices de tabela `cidade`
+-- Indexes for table `cidade`
 --
 ALTER TABLE `cidade`
   ADD PRIMARY KEY (`cod_cida`),
   ADD KEY `cod_esta` (`cod_esta`);
 
 --
--- Índices de tabela `comentario`
+-- Indexes for table `comentario`
 --
 ALTER TABLE `comentario`
   ADD KEY `cod_doacao` (`cod_doacao`),
   ADD KEY `cod_usu` (`cod_usu`);
 
 --
--- Índices de tabela `doacao`
+-- Indexes for table `doacao`
 --
 ALTER TABLE `doacao`
   ADD PRIMARY KEY (`cod_doacao`),
@@ -5982,52 +5986,52 @@ ALTER TABLE `doacao`
   ADD KEY `cod_usu` (`cod_usu`);
 
 --
--- Índices de tabela `especie`
+-- Indexes for table `especie`
 --
 ALTER TABLE `especie`
   ADD PRIMARY KEY (`cod_especie`);
 
 --
--- Índices de tabela `estado`
+-- Indexes for table `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`cod_esta`);
 
 --
--- Índices de tabela `fotosanimal`
+-- Indexes for table `fotosanimal`
 --
 ALTER TABLE `fotosanimal`
   ADD PRIMARY KEY (`cod_foto`),
   ADD KEY `cod_animal` (`cod_animal`);
 
 --
--- Índices de tabela `raca`
+-- Indexes for table `raca`
 --
 ALTER TABLE `raca`
   ADD PRIMARY KEY (`cod_raca`),
   ADD KEY `cod_especie` (`cod_especie`);
 
 --
--- Índices de tabela `sessao`
+-- Indexes for table `sessao`
 --
 ALTER TABLE `sessao`
   ADD PRIMARY KEY (`idsessao`),
   ADD KEY `cod_usu` (`cod_usu`);
 
 --
--- Índices de tabela `statusdoacao`
+-- Indexes for table `statusdoacao`
 --
 ALTER TABLE `statusdoacao`
   ADD PRIMARY KEY (`cod_status`);
 
 --
--- Índices de tabela `tip_user`
+-- Indexes for table `tip_user`
 --
 ALTER TABLE `tip_user`
   ADD PRIMARY KEY (`cd_tipuser`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_usu`),
@@ -6035,77 +6039,88 @@ ALTER TABLE `usuario`
   ADD KEY `cd_tipuser` (`cd_tipuser`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `animal`
+-- AUTO_INCREMENT for table `animal`
 --
 ALTER TABLE `animal`
   MODIFY `cod_animal` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT de tabela `cidade`
+-- AUTO_INCREMENT for table `cidade`
 --
 ALTER TABLE `cidade`
   MODIFY `cod_cida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5565;
+
 --
--- AUTO_INCREMENT de tabela `doacao`
+-- AUTO_INCREMENT for table `doacao`
 --
 ALTER TABLE `doacao`
   MODIFY `cod_doacao` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT de tabela `especie`
+-- AUTO_INCREMENT for table `especie`
 --
 ALTER TABLE `especie`
   MODIFY `cod_especie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT de tabela `estado`
+-- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
   MODIFY `cod_esta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
--- AUTO_INCREMENT de tabela `fotosanimal`
+-- AUTO_INCREMENT for table `fotosanimal`
 --
 ALTER TABLE `fotosanimal`
   MODIFY `cod_foto` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT de tabela `raca`
+-- AUTO_INCREMENT for table `raca`
 --
 ALTER TABLE `raca`
   MODIFY `cod_raca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+
 --
--- AUTO_INCREMENT de tabela `sessao`
+-- AUTO_INCREMENT for table `sessao`
 --
 ALTER TABLE `sessao`
   MODIFY `idsessao` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT de tabela `statusdoacao`
+-- AUTO_INCREMENT for table `statusdoacao`
 --
 ALTER TABLE `statusdoacao`
   MODIFY `cod_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT de tabela `tip_user`
+-- AUTO_INCREMENT for table `tip_user`
 --
 ALTER TABLE `tip_user`
   MODIFY `cd_tipuser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
 --
--- Restrições para dumps de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `animal`
+-- Limitadores para a tabela `animal`
 --
 ALTER TABLE `animal`
   ADD CONSTRAINT `animal_ibfk_1` FOREIGN KEY (`cod_doacao`) REFERENCES `doacao` (`cod_doacao`),
   ADD CONSTRAINT `animal_ibfk_2` FOREIGN KEY (`cod_raca`) REFERENCES `raca` (`cod_raca`);
 
 --
--- Restrições para tabelas `chat`
+-- Limitadores para a tabela `chat`
 --
 ALTER TABLE `chat`
   ADD CONSTRAINT `chat_ibfk_1` FOREIGN KEY (`idsessao`) REFERENCES `sessao` (`idsessao`),
@@ -6113,49 +6128,50 @@ ALTER TABLE `chat`
   ADD CONSTRAINT `chat_ibfk_3` FOREIGN KEY (`cod_usuR`) REFERENCES `usuario` (`cod_usu`);
 
 --
--- Restrições para tabelas `cidade`
+-- Limitadores para a tabela `cidade`
 --
 ALTER TABLE `cidade`
   ADD CONSTRAINT `cidade_ibfk_1` FOREIGN KEY (`cod_esta`) REFERENCES `estado` (`cod_esta`);
 
 --
--- Restrições para tabelas `comentario`
+-- Limitadores para a tabela `comentario`
 --
 ALTER TABLE `comentario`
   ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`cod_doacao`) REFERENCES `doacao` (`cod_doacao`),
   ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`cod_usu`) REFERENCES `usuario` (`cod_usu`);
 
 --
--- Restrições para tabelas `doacao`
+-- Limitadores para a tabela `doacao`
 --
 ALTER TABLE `doacao`
   ADD CONSTRAINT `doacao_ibfk_1` FOREIGN KEY (`cod_status`) REFERENCES `statusdoacao` (`cod_status`),
   ADD CONSTRAINT `doacao_ibfk_2` FOREIGN KEY (`cod_usu`) REFERENCES `usuario` (`cod_usu`);
 
 --
--- Restrições para tabelas `fotosanimal`
+-- Limitadores para a tabela `fotosanimal`
 --
 ALTER TABLE `fotosanimal`
   ADD CONSTRAINT `fotosanimal_ibfk_1` FOREIGN KEY (`cod_animal`) REFERENCES `animal` (`cod_animal`);
 
 --
--- Restrições para tabelas `raca`
+-- Limitadores para a tabela `raca`
 --
 ALTER TABLE `raca`
   ADD CONSTRAINT `raca_ibfk_1` FOREIGN KEY (`cod_especie`) REFERENCES `especie` (`cod_especie`);
 
 --
--- Restrições para tabelas `sessao`
+-- Limitadores para a tabela `sessao`
 --
 ALTER TABLE `sessao`
   ADD CONSTRAINT `sessao_ibfk_1` FOREIGN KEY (`cod_usu`) REFERENCES `usuario` (`cod_usu`);
 
 --
--- Restrições para tabelas `usuario`
+-- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`cod_cida`) REFERENCES `cidade` (`cod_cida`),
   ADD CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`cd_tipuser`) REFERENCES `tip_user` (`cd_tipuser`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
