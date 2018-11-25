@@ -15,7 +15,7 @@ require_once "../models/Login.php";
 switch ($acao) {
 
     case 'index';
-        include '../views/index.php';
+        include '../index.php';
         break;
 
     case 'registrar';
@@ -23,7 +23,7 @@ switch ($acao) {
         break;
 
     case 'registrardf';
-        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['cpf']/*, $_POST['estados_brasil']*/);
+        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['cpf'] , $_POST['telefone'], $_POST['estados-brasil']);
         $crud = new CrudUsuario();
         $crud->CadastrarUsuario($usuario);
         break;
@@ -39,9 +39,10 @@ switch ($acao) {
 
             $login->verificarCadastro($_POST['email'], $_POST['password']);
 
-            header('location:sfdklogado.php');
-
+            header("location: sfdklogado.php");
+            echo "sla1";
         } catch (Exception $e){
+            echo "sla";
             header("location: http://localhost/projetoCaodocao-master/caodocao/controller/sfdk.php?acao=login&msg={$e->getMessage()}");
         }
 

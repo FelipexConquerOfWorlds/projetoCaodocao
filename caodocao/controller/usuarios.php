@@ -1,16 +1,11 @@
 <?php
-
+require_once '../models/conexao.php';
 
 function editarUsuario(){
 
 }
 
-
-switch ($acao){
-    case "editar":
-        EditarUsuario();
-}
-/*if (isset($_GET['acao'])){
+if (isset($_GET['acao'])){
     $acao = $_GET['acao'];
 }else{
     $acao = 'index';
@@ -19,9 +14,18 @@ switch ($acao){
 
 require_once '../models/CrudUsuario.php';
 require_once '../models/login.php';
+require_once '../models/loginn.php';
+
+
+
 
 switch ($acao){
 
+
+     case'deslogado':
+
+         header("location: ../views/login.php");
+         break;
 
      case'index':
 
@@ -29,6 +33,10 @@ switch ($acao){
     $usuarios = $crud->GetUsuarios();
     include '../views/usuario.php';
     break;
+
+    case "editar":
+        EditarUsuario();
+        break;
 
 
     case 'inserir':
@@ -41,9 +49,15 @@ switch ($acao){
 
 
     case 'gravaInserir':
-        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha']);
+        $usuario = new Usuario($_POST['nome'], $_POST['email'],$_POST['cnpj'], $_POST['senha'], $_POST['telefone'], $_POST['estados-brasil'] );
         $crud = new CrudUsuario();
         $cadastra = $crud->CadastrarUsuario($usuario);
+//        echo $_POST['nome'];
+//        echo $_POST['email'];
+//        echo $_POST['telefone'];
+//        echo $_POST['senha'];
+//        echo $_POST['estados-brasil'];
+//        header("location:../views/login.php");
     break;
 
     case 'atualizar':
@@ -68,7 +82,7 @@ switch ($acao){
 
      case 'Gravalogin':
          $login = new login();
-         $login->verificarCadastro($_POST['email'], $_POST['senha']);
+         $login-> verificarCadastro($_POST['email'], $_POST['senha']);
          if ($login == false) {
              //mudar essa pagina para login.php com mensagem de inseriu dados invalidos junto
              include '../view/login.php';
@@ -86,4 +100,4 @@ switch ($acao){
     //    grava todas as informaçõpes que quiser
     //redireciona
 
-}*/
+}

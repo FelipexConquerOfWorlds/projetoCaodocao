@@ -20,7 +20,7 @@ CONTROLADOR DO CRUD DE ANIMAIS */
         case 'index':
             $crud = new CrudAnimal();
             $animais = $crud->GetAnimais();
-            include '../views/index.php';
+            include '../index.php';
 
             break;
         case 'exibir': //vai ter que ser com a funcao filtrar animais

@@ -1,7 +1,7 @@
 <?php
 
-include_once __DIR__."/../models/Login.php";
-login::islogado();
+    include_once "../models/Loginn.php";
+    loginn::islogado();
 
     if (!isset($_SESSION)){
         session_start();
@@ -12,7 +12,6 @@ login::islogado();
     include_once '../models/CrudAnimal.php';
     include_once '../models/CrudDoacao.php';
     include_once '../models/CrudUsuario.php';
-    include_once '../models/Login.php';
 
     $tipo_usuario = $_SESSION['cd_tipuser'];
 
@@ -20,13 +19,17 @@ login::islogado();
 
     switch ($tipo_usuario){
 
-        case'3':
+        case '2':
+
+           echo "<script>alert('Seu Email ou Senha estão incorretos'); window.history.go(-1);</script>";
+            break;
+
+       case'4' :
         //usuario normal tela e funcoes com switch acao
             if (isset($_GET['acao'])){
                 $acao = $_GET['acao'];
             }else{
                 $acao = 'index';
-
             }
             switch ($acao) {
 
@@ -38,14 +41,14 @@ login::islogado();
                 include '../views/adotar.php';
                 break;
 
-                case 'verAnimal':
+               case 'verAnimal':
                 include '../views/viewanimal.php';
                 break;
 
                 case 'queroAdotar':
                     //case se o cara quiser o animal que ele acabou de vizualizar
                     //iniciar o chat quando apertado esse botao
-                    
+
                 case 'doar':
                 include '../views/animalcad.php';
                 break;
@@ -54,20 +57,19 @@ login::islogado();
                 $a = new Animal($_POST['nome'], $_POST['datanascimento'], $_POST['foto_perfil'], $_POST['cod_especie'], $_POST['cod_raca']);
                 $crudDoa = new CrudDoacao();
                 $crudAni = new CrudAnimal();
-                $crudAni->CadastrarAnimais($a);
+               $crudAni->CadastrarAnimais($a);
                 $d = new Doacao($_SESSION['cod_usu'], 1);
                 $crudDoa->insertDoacao($d);
             }
 
+       break;
 
-        break;
-
-        case'2':
+        case'3':
         //admin tela unica
             include '../views/admin.php';
 
         case '1':
-        //admin master tela unica
+        header('location:../views/admin.php');
 
 
     }
