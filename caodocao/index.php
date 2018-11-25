@@ -24,7 +24,7 @@
         </ul>
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href="controller/sfdk.php?acao=login">
           <i class="fa d-inline fa-lg fa-user-circle-o"></i> Login</a>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="cadastro.php">
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="views/cadastro.html">
           <i class="fa d-inline fa-lg fa-sign-in"></i> Cadastrar-se</a>
       </div>
     </div>
@@ -34,7 +34,9 @@
       <div class="row">
         <div class="col-md-12">
           <h1 class="display-3 mb-4 text-black">Cãodoção</h1>
-          <p class="lead mb-5 " style="color:yellow;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis delectus doloremque, dolores doloribus labore minima molestiae, mollitia odit omnis pariatur unde. Blanditiis maiores mollitia omnis, quia recusandae sed voluptatem. </p>
+            <br>
+            <br>
+            <br>
           <a href="controller/sfdklogado.php?acao=adotar" class="btn btn-lg mx-1 btn-warning text-dark">Adotar</a>
           <a href="controller/usuarios.php?acao=deslogado" class="btn btn-lg btn-warning mx-1 text-dark">Doar</a>
         </div>
