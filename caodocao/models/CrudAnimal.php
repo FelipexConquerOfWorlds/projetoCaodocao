@@ -28,7 +28,7 @@ class CrudAnimal
 
 
 
-                $sql = "select * from animal, doacao, statusdoacao where statusdoacao.cod_status = 1";
+                $sql = "select * from animal, raca, especie, doacao, statusdoacao where raca.cod_raca = animal.cod_raca and raca.cod_especie = especie.cod_especie and animal.cod_animal = doacao.cod_doacao and doacao.cod_status = statusdoacao.cod_status and statusdoacao.cod_status = 1";
 
                 $resultado = $this->conexao->query($sql);
 

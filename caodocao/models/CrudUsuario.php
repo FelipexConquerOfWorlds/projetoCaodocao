@@ -28,7 +28,7 @@ class CrudUsuario
         $listaUsuarios = [];
 
         foreach ($usuarios as $usuario) {
-            $obUsu = new Usuario($usuario['nome'], $usuario['email'], $usuario['telefone'], $usuario['senha'], $usuario['cnpj'], $usuario['cod_cida'], $usuario['cod_usu']);
+            $obUsu = new Usuario($usuario['nome'], $usuario['email'], $usuario['telefone'], $usuario['senha'], $usuario['cnpj'], $usuario['cod_cida'], $usuario['cod_usu'], $usuario['fotoperfil']);
 
             $listaUsuarios[] = $obUsu;
 
@@ -45,14 +45,14 @@ class CrudUsuario
 
         $arrai = $resultado->fetch(PDO::FETCH_ASSOC);
 
-        $usuario = new Usuario($arrai['nome'], $arrai['email'], $arrai['telefone'], $arrai['senha'], $arrai['cnpj'], $arrai['cod_cida'], $arrai['cod_usu']);
+        $usuario = new Usuario($arrai['nome'], $arrai['email'], $arrai['telefone'], $arrai['senha'], $arrai['cnpj'], $arrai['cod_cida'], $arrai['cod_usu'], $arrai['fotoperfil']);
 
         return $usuario;
     }
 
     public function CadastrarUsuario(Usuario $usuario){
 
-        $sql = "insert into usuario (nome, email, cnpj, senha, telefone, cod_cida, cod_usu, cd_tipuser) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getCnpj()}','{$usuario->getSenha()}','{$usuario->getTelefone()}','{$usuario->getCodCida()}','{$usuario->getCodUsu()}',)";
+        $sql = "insert into usuario (nome, email, cnpj, senha, telefone, cod_esta, cd_tipuser) values ('{$usuario->getNome()}','{$usuario->getEmail()}','{$usuario->getCnpj()}','{$usuario->getSenha()}','{$usuario->getTelefone()}','{$usuario->getCodEsta()}','{$usuario->getCdTipuser()}')";
 
         try{
             $this->conexao-> exec($sql);
@@ -60,7 +60,6 @@ class CrudUsuario
         }catch (PDOException $e){
             return $e->getMessage();
         }
-        header('location: ../views/login.php');
 
     }
 
@@ -76,9 +75,9 @@ class CrudUsuario
         }
     }
 
-    public function DeleteUsuario(int $id){
+    public function DeleteUsuario(int $cod_usu){
 
-        $sql = "delete from usuario where id ='{$id}'";
+        $sql = "delete from usuario where id ='{$cod_usu}'";
 
         try{
             $this->conexao->exec($sql);

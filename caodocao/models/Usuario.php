@@ -9,10 +9,11 @@ class Usuario
         private $senha;
         private $cod_usu;
         private $cnpj;
-        private $cod_cida;
+        private $cod_esta;
         private $cd_tipuser;
+        private $fotoperfil;
 
-            public function __construct($nome = null, $email = null, $cnpj = null, $senha = null, $cod_cida = null, $telefone = null, $cod_usu = null , $cd_tipuser = null)
+            public function __construct($nome = null, $email = null, $cnpj = null, $senha = null, $cod_esta = null, $telefone = null, $cod_usu = null , $cd_tipuser = 2, $fotoperfil = '../views/img/portfolio/fotoperfil.jpg')
             {
                 $this->nome = $nome;
                 $this->email = $email;
@@ -20,8 +21,9 @@ class Usuario
                 $this->senha = $senha;
                 $this->cod_usu = $cod_usu;
                 $this->cnpj = $cnpj;
-                $this->cod_cida = $cod_cida;
+                $this->cod_esta = $cod_esta;
                 $this->cd_tipuser = $cd_tipuser;
+                $this->fotoperfil = $fotoperfil;
             }
 
     /**
@@ -30,6 +32,22 @@ class Usuario
     public function getNome()
     {
         return $this->nome;
+    }
+
+    /**
+     * @return null
+     */
+    public function getFotoperfil()
+    {
+        return $this->fotoperfil;
+    }
+
+    /**
+     * @param null $fotoperfil
+     */
+    public function setFotoperfil($fotoperfil): void
+    {
+        $this->fotoperfil = $fotoperfil;
     }
 
     /**
@@ -139,17 +157,17 @@ class Usuario
     /**
      * @return mixed
      */
-    public function getCodCida()
+    public function getCodEsta()
     {
-        return $this->cod_cida;
+        return $this->cod_esta;
     }
 
     /**
      * @param mixed $cod_cida
      */
-    public function setCodCida($cod_cida)
+    public function setCodEsta($cod_esta)
     {
-        $this->cod_cida = $cod_cida;
+        $this->cod_esta = $cod_esta;
     }
 
 }
