@@ -26,6 +26,8 @@
           <i class="fa d-inline fa-lg fa-user-circle-o"></i> Login</a>
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../views/cadastro.html">
           <i class="fa d-inline fa-lg fa-reply-all"></i> Cadastrar-se</a>
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../views/indexlogado.php">
+          <i class="fa d-inline fa-lg fa-reply-all"></i> Voltar </a>
       </div>
     </div>
   </nav>

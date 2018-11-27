@@ -1,3 +1,7 @@
+<?php
+require_once ('../controller/sfdklogado.php');
+include_once ('../models/usuario.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,13 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css"> </head>
 
-<body class="bg-warning border">
+<body>
   <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
+        <img src="../views/img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
       <a class="navbar-brand" href="#">
-        <b style="background-image: url('../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:repeat;" class="w-75"> </b>
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -22,8 +25,10 @@
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="adotar.php">
-          <i class="fa d-inline fa-lg fa-reply-all"></i> Página de Adoção</a>
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="#">
+          <i class="fa d-inline fa-lg fa-github"></i> Animais</a>
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href='../views/indexlogado.php'>
+          <i class="fa d-inline fa-lg fa-reply-all"></i> Voltar </a>
       </div>
     </div>
   </nav>
@@ -32,15 +37,13 @@
       <div class="row h-100 w-100 mx-5 px-1">
         <div class="col-4 col-sm-6 col-md-6 col-lg-7 col-xl-7 bg-dark border border-dark w-50 h-100 m-1">
           <div class="card bg-dark">
-            <img class="card-img-top p-4" src="img/portfolio/placeholder-2.png" alt="Card image cap">
+            <img class="card-img-top p-4"  src="<?php echo $fotoUsuario; ?>" alt="Card image cap">
             <div class="card-body bg-dark w-100 p-0">
-              <h5 class="card-title">Nome: Bob</h5>
-              <h5 class="card-title">Raça: Cachorro</h5>
-              <h5 class="card-title">Idade: 3 meses</h5>
+              <h5 class="card-title">Nome: Joelmir</h5>
               <h5 class="card-title">Sexo: Masculino</h5>
-              <h1>Sou muito lindo e por isso mereço ser adotado.</h1>
-              <h5 class="card-title">Dono: Joelmir</h5>
-              <a href="#" class="btn btn-warning btn-lg ">Conversar</a>
+              <h5 class="card-title">Idade: Indefinida</h5>
+              <h1>Sou muito lindo e por isso mereço aparecer nesse TCC.</h1>
+              <a href="#" class="btn btn-warning btn-lg ">Ver Doações</a>
             </div>
           </div>
         </div>
@@ -50,6 +53,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

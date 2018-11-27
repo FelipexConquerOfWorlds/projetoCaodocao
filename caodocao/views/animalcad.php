@@ -36,17 +36,29 @@
             <div class="card-body">
               <h1 class="mb-4 w-75">Cadastre-se seu Animal </h1>
               <img class="img-fluid d-block p-2" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg">
-              <form action="https://formspree.io/YOUREMAILHERE">
+              <form method="post" action="../controller/sfdklogado.php?acao=gravadoar">
                 <div class="form-group">
                   <label></label>
                   <input type="text" class="form-control" placeholder="Nome"> </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Data de nascimento"> </div>
-                <div class="form-group">
+
+                  <div class="form-group">
+                  <input type="date" class="form-control" placeholder="Data de nascimento"> </div>
+
+                  <div class="form-group">
                   <input type="text" class="form-control" placeholder="Raça"> </div>
+
                 <div class="form-group">
-                  <input type="text" class="form-control p-4 text-uppercase" placeholder="descrição"> </div>
-                <button type="submit" class="btn btn-warning">Cadastrar</button>
+                  <input type="text" class="form-control p-4 text-uppercase" placeholder="especie"> </div>
+                  <select name="especie" class="btn btn-white w-100">
+                      <option value="1">Cão</option>
+                      <option value="2">Gato</option>
+                      <option value="3">Outro</option>
+                  </select>
+            </div>
+              <br>
+
+
+                  <button type="submit" class="btn btn-warning">Cadastrar</button>
               </form>
             </div>
           </div>
