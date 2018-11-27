@@ -12,19 +12,27 @@
     include_once '../models/CrudAnimal.php';
     include_once '../models/CrudDoacao.php';
     include_once '../models/CrudUsuario.php';
+    include_once '../models/Usuario.php';
 
     $tipo_usuario = $_SESSION['cd_tipuser'];
 
-    var_dump($tipo_usuario);
+    if (isset($_GET['acao'])){
+        $acao = $_GET['acao'];
+    }else{
+        $acao = 'index';
+    }
+
+//    var_dump($tipo_usuario);
 
     switch ($tipo_usuario){
 
-        case '2':
+
+        case '4':
 
            echo "<script>alert('Seu Email ou Senha estão incorretos'); window.history.go(-1);</script>";
             break;
 
-       case'4' :
+       case'3' :
         //usuario normal tela e funcoes com switch acao
             if (isset($_GET['acao'])){
                 $acao = $_GET['acao'];
@@ -38,11 +46,18 @@
                 break;
 
                 case 'adotar':
-                include '../views/adotar.php';
+                //include '../views/adotar.php';
+                  include '../views/adotarteste.php';
                 break;
 
                case 'verAnimal':
                 include '../views/viewanimal.php';
+                break;
+
+               case 'perfil':
+                   $usuario =new Usuario();
+                   $fotoUsuario = $usuario->getFotoperfil();
+                   include '../views/perfilpage.php';
                 break;
 
                 case 'queroAdotar':
@@ -61,15 +76,43 @@
                 $d = new Doacao($_SESSION['cod_usu'], 1);
                 $crudDoa->insertDoacao($d);
             }
+            break;
+        case 'perfil':
+            $usuario= new Usuario();
+            print_r($this->getFotoperfil());
+            if ($usuario->getFotoperfil()== null) {
+                $fotoUsuario = "portfolio/fotoperfil.jpg";
+            }else{
+               $fotoUsuario = $usuario ->getFotoperfil();
+            }
 
-       break;
+            include '../views/perfilpage.php';
 
-        case'3':
+            break;
+
+        case'2':
         //admin tela unica
             include '../views/admin.php';
+            switch ($acao){
+                case 'editar':
+                    break;
+            }
+            break;
 
         case '1':
-        header('location:../views/admin.php');
+            switch ($acao){
+                case 'editar':
 
+                    $usuario= new Usuario();
+                    $crudUsuario = new CrudUsuario();
+                    $id2 = $_SESSION['cod_usu'];
+                    $crudUsuario ->UpdateUsuario($id2);
+
+                    break;
+
+                case 'banir':
+            }
+        include '../views/admin.php';
+        break;
 
     }

@@ -23,9 +23,10 @@ switch ($acao) {
         break;
 
     case 'registrardf';
-        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['cpf'] , $_POST['telefone'], $_POST['estados-brasil']);
+        $usuario = new Usuario($_POST['nome'], $_POST['email'], $_POST['cnpj'], $_POST['senha'], $_POST['estados-brasil'] , $_POST['telefone']);
         $crud = new CrudUsuario();
         $crud->CadastrarUsuario($usuario);
+        include '../views/login.php';
         break;
 
     case 'login';
