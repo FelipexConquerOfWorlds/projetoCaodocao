@@ -8,9 +8,8 @@ class Doacao
     private $cod_status;
     private $cod_usu;
 
-        public function __construct($cod_usu, $cod_status, $data_cadastro = null, $data_doacao = null)
+        public function __construct($cod_usu, $cod_status, $data_doacao= null)
         {
-            $this->data_cadastro = $data_cadastro;
             $this->data_doacao = $data_doacao;
             $this->cod_status = $cod_status;
             $this->cod_usu = $cod_usu;

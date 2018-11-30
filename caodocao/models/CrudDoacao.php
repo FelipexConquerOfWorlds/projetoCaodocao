@@ -48,9 +48,11 @@ class CrudDoacao
 
     public function insertDoacao(Doacao $doacao)
     {
-        //usar a funçao NOW() para data
-        $sql = "insert into doacao(data_doacao, data_cadastro, cod_usu, cod_status) values (CURDATE(), CURDATE(), '{$doacao->getCodUsu()}', '{$doacao->getCodStatus()}')";
 
+        //usar a funçao NOW() para data
+        $sql = "insert into doacao(cod_usu, cod_status) values ('{$doacao->getCodUsu()}', '{$doacao->getCodStatus()}')";
+        echo $sql;
+        echo "<br >";
         try {
             $this->conexao->exec($sql);
 
@@ -61,9 +63,9 @@ class CrudDoacao
 
     public function updateDoacao(Doacao $doacao){
         $sql = "update doacao SET data_doacao = '{$doacao->getDataDoacao()}', data_cadastro = '{$doacao->getDataCadastro()}', cod_usu = '{$doacao->getCodUsu()}', cod_status = '{$doacao->getCodStatus()}'";
-
         try{
             $this->conexao->exec($sql);
+
 
         }catch (PDOException $e){
             return $e->getMessage();
@@ -83,4 +85,13 @@ class CrudDoacao
             return $e->getMessage();
         }
     }
+
+    public function pegarUltimoId(): int{
+        $sql = ("SELECT max(cod_doacao) as lastid FROM doacao ");
+        $qu_idquestao = $this->conexao->query($sql);
+        $lastId = $qu_idquestao->fetch(PDO::FETCH_ASSOC);
+
+        return $lastId['lastid'];
+    }
+
 }

@@ -3,28 +3,29 @@
 
 class Usuario
 {
-        private $nome;
-        private $email;
-        private $telefone;
-        private $senha;
-        private $cod_usu;
-        private $cnpj;
-        private $cod_esta;
-        private $cd_tipuser;
-        private $fotoperfil;
+    private $nome;
+    private $email;
+    private $telefone;
+    private $senha;
+    private $cod_usu;
+    private $cnpj;
+    private $cod_esta;
+    private $cd_tipuser;
+    private $fotoperfil;
 
-            public function __construct($nome = null, $email = null, $cnpj = null, $senha = null, $cod_esta = null, $telefone = null, $cod_usu = null , $cd_tipuser = 2, $fotoperfil = '../views/img/portfolio/fotoperfil.jpg')
-            {
-                $this->nome = $nome;
-                $this->email = $email;
-                $this->telefone = $telefone;
-                $this->senha = $senha;
-                $this->cod_usu = $cod_usu;
-                $this->cnpj = $cnpj;
-                $this->cod_esta = $cod_esta;
-                $this->cd_tipuser = $cd_tipuser;
-                $this->fotoperfil = $fotoperfil;
-            }
+    public function __construct($nome = null, $email = null, $cnpj = null, $senha = null, $cod_esta = null, $telefone = null, $cd_tipuser = 3, $fotoperfil = '../views/img/portfolio/fotoperfil.jpg',  $cod_usu = null)
+    {
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->telefone = $telefone;
+        $this->senha = $senha;
+        $this->cod_usu = $cod_usu;
+        $this->cnpj = $cnpj;
+        $this->cod_esta = $cod_esta;
+        $this->cd_tipuser = $cd_tipuser;
+        $this->fotoperfil = $fotoperfil;
+
+    }
 
     /**
      * @return mixed
@@ -170,4 +171,17 @@ class Usuario
         $this->cod_esta = $cod_esta;
     }
 
+    public function setAllValues(Usuario $usuario){
+
+        $this->nome = $usuario->getNome();
+        $this->email = $usuario->getEmail();
+        $this->telefone = $usuario->getTelefone();
+        $this->senha = $usuario->getSenha();
+        $this->cod_usu = $usuario->getCodUsu();
+        $this->cnpj = $usuario->getCnpj();
+        $this->cod_esta = $usuario->getCodEsta();
+        $this->cd_tipuser = $usuario->getCdTipuser();
+        $this->fotoperfil = $usuario->getFotoperfil();
+    }
 }
+

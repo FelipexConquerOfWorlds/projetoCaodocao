@@ -37,9 +37,9 @@ class login
                                             } else {
 
 
-                                                $objUsu = new Usuario($usuario['nome'], $usuario['email'], $usuario['cod_usu'], $usuario['cnpj'], $usuario['senha'], $usuario['telefone'], $usuario['cod_cida'], $usuario['cd_tipuser']);
+                                                $objUsu = new Usuario($usuario['nome'], $usuario['email'], $usuario['cod_usu'], $usuario['cnpj'], $usuario['senha'], $usuario['telefone'], $usuario['cod_esta'], $usuario['cd_tipuser']);
 
-                                                session_start();
+//
 
                                                 $_SESSION['nome'] = $objUsu->getNome();
                                                 $_SESSION['email'] = $objUsu->getEmail();
@@ -47,7 +47,7 @@ class login
                                                 $_SESSION['cnpj'] = $objUsu->getCnpj();
                                                 $_SESSION['senha'] = $objUsu->getSenha();
                                                 $_SESSION['telefone'] = $objUsu->getTelefone();
-                                                $_SESSION['cod_cida'] = $objUsu->getCodCida();
+                                                $_SESSION['cod_cida'] = $objUsu->getCodEsta();
                                                 $_SESSION['cd_tipuser'] = $objUsu->getCdTipuser();
                                                  return $objUsu;
 
