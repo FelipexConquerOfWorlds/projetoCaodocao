@@ -24,7 +24,7 @@ switch ($acao){
 
      case'deslogado':
 
-         header("location: ../views/login.php");
+             header("location: ../views/login.php");
          break;
 
      case'index':
@@ -57,8 +57,9 @@ switch ($acao){
 //        echo $_POST['telefone'];
 //        echo $_POST['senha'];
 //        echo $_POST['estados-brasil'];
-//        header("location:../views/login.php");
+    include '../views/login.php';
     break;
+
 
     case 'atualizar':
         include '../views/usuarios/atualizardadosUsu.php';
