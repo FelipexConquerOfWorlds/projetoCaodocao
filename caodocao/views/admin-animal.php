@@ -20,8 +20,7 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-        <ul class="navbar-nav">
+<div>        <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href="#">
@@ -30,6 +29,7 @@
           <i class="fa d-inline fa-lg fa-github"></i>Animais</a>
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../index.php">
           <i class="fa d-inline fa-lg fa-reply-all"></i>Sign out</a>
+</div>
       </div>
     </div>
   </nav>

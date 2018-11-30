@@ -9,15 +9,15 @@
 
 </head>
 <BODY>
-<div class="py-5 text-center bg-warning h-75" style="" >
+<div class="py-5 text-center bg-warning h-75" >
     <div class="container">
         <div class="row">
             <table class="table table-black">
                 <thead>
                 <tr>
-                    <th scope="col" style="text-align: left">Ação</th>
-                    <th scope="col" style="text-align: left">Nome</th>
-                    <th scope="col" style="text-align: left">Email</th>
+                    <th scope="col" style="text-align: center">Ação</th>
+                    <th scope="col" style="text-align: center">Nome</th>
+                    <th scope="col" style="text-align: center">Email</th>
                 </tr>
                 </thead>
                 <form class="form-inline">
@@ -28,26 +28,28 @@
                 </form>
 
                 <?php
+
                 include_once __DIR__."/../models/CrudAnimal.php";
                 include_once __DIR__."/../models/Animal.php";
                 $crudAnimal = new CrudAnimal();
                 $animais    = $crudAnimal->GetAnimais();
-                foreach ($animais as $animal):?>
 
-
+                foreach ($animais as $animal):
+//                    echo $animal->getFotoPerfil();
+//                    exit();
+                    ?>
                     <tbody>
 
 
                     <tr>
                         <td scope="">
-                            <a href="../controller/sfdklogado.php?acao=editar   " class="btn btn-success" style="column-span: initial">Editar</a>
-                            <a href="../models/Usuario.php?acao=banir&idusuario=codigoUsuario" class="btn btn-danger">Banir</a>
+                            <a href="../controller/sfdklogado.php?acao=queroAdotar&id=<?=$animal->getCodAnimal();?>" class="btn btn-success" style="column-span: initial">Vizualizar</a>
                         </td>
 
                         <td><?=$animal->getNome();?></td>
 
-                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $animal->getFotoPerfil() ).'"/>';?></td>
-                        <td><?=$animal->getCodRaca();?></td>
+                        <td  ><?php echo '<img src="../views/img/portfolio/'.$animal->getFotoPerfil().'"style="width:20%"/>';?></td>
+                          <td>  <?=$animal->getDatanascimento();?> </td>
                     </tr>
 
                     </tbody>

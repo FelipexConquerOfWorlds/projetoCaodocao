@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<?php
+include_once "../models/Loginn.php";
+loginn::islogado();
+
+if (!isset($_SESSION)) {
+session_start();
+}?>
 
 <head>
   <meta charset="utf-8">
@@ -22,7 +29,7 @@
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="adotar.php">
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../views/adotarteste.php">
           <i class="fa d-inline fa-lg fa-reply-all"></i> Página de Adoção</a>
       </div>
     </div>
@@ -32,15 +39,19 @@
       <div class="row h-100 w-100 mx-5 px-1">
         <div class="col-4 col-sm-6 col-md-6 col-lg-7 col-xl-7 bg-dark border border-dark w-50 h-100 m-1">
           <div class="card bg-dark">
-            <img class="card-img-top p-4" src="img/portfolio/placeholder-2.png" alt="Card image cap">
             <div class="card-body bg-dark w-100 p-0">
-              <h5 class="card-title">Nome: Bob</h5>
-              <h5 class="card-title">Raça: Cachorro</h5>
-              <h5 class="card-title">Idade: 3 meses</h5>
-              <h5 class="card-title">Sexo: Masculino</h5>
-              <h1>Sou muito lindo e por isso mereço ser adotado.</h1>
-              <h5 class="card-title">Dono: Joelmir</h5>
-              <a href="#" class="btn btn-warning btn-lg ">Conversar</a>
+         <tr>
+              <td><?='<img src="../views/img/portfolio/'.$_SESSION['fotoPerfilDog'].'"style="width: 30%" </img>';echo "<br>";?></td>
+             <label>Nome:</label>
+             <td><?=$_SESSION['nomeDog'];?></td>
+             <Br><label>Raça:</label>
+             <td><?=$_SESSION['nomeRaca'];?></td>
+             <BR><label>Nasceu em:</label>
+             <td><?=$_SESSION['Datanascimento'];?></td>
+             <br><label>Nome do dono:</label>
+             <td><?=$_SESSION['nomeDonoDog'];echo "<br>";?></td>
+         </tr>
+              <a href="../controller/sfdklogado.php?acao=contactarDono" class="btn btn-warning btn-lg ">Contactar dono</a>
             </div>
           </div>
         </div>

@@ -1,8 +1,17 @@
-<?php
-require_once ('../controller/sfdklogado.php');
-include_once ('../models/usuario.php');
-?>
-<!DOCTYPE html>
+ <?php
+                include_once __DIR__."/../models/CrudUsuario.php";
+                include_once __DIR__."/../models/Usuario.php";
+
+                $CrudUsuario = new CrudUsuario();
+                $CrudUsuario ->GetUsuario($_SESSION['idDonoDog']);
+                $usuario = new Usuario();
+                $usuario->setAllValues($CrudUsuario->GetUsuario($_SESSION['idDonoDog']));
+                $img     = $usuario->getFotoperfil();
+                $nomeDono = $usuario->getNome();
+                echo $img;
+                ?>
+
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -25,10 +34,12 @@ include_once ('../models/usuario.php');
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
+          <div style="display: flow">
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href="#">
           <i class="fa d-inline fa-lg fa-github"></i> Animais</a>
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href='../views/indexlogado.php'>
           <i class="fa d-inline fa-lg fa-reply-all"></i> Voltar </a>
+      </div>
       </div>
     </div>
   </nav>
@@ -37,13 +48,14 @@ include_once ('../models/usuario.php');
       <div class="row h-100 w-100 mx-5 px-1">
         <div class="col-4 col-sm-6 col-md-6 col-lg-7 col-xl-7 bg-dark border border-dark w-50 h-100 m-1">
           <div class="card bg-dark">
-            <img class="card-img-top p-4"  src="<?php echo $fotoUsuario; ?>" alt="Card image cap">
+            <img class="card-img-top p-4"  src="<?php echo $usuario->getFotoperfil();?>" alt="Card image cap">
             <div class="card-body bg-dark w-100 p-0">
-              <h5 class="card-title">Nome: Joelmir</h5>
-              <h5 class="card-title">Sexo: Masculino</h5>
-              <h5 class="card-title">Idade: Indefinida</h5>
-              <h1>Sou muito lindo e por isso mereço aparecer nesse TCC.</h1>
-              <a href="#" class="btn btn-warning btn-lg ">Ver Doações</a>
+
+              <h5 class="card-title">Nome:<?=$usuario->getNome();?>></h5><br>
+              <h5 class="card-title">Email:<?=$usuario->getEmail();?></h5><br>
+              <h5 class="card-title">Telefone:<?=$usuario->getTelefone();?>a</h5><br>
+              <br>
+              <a href="../controller/sfdklogado.php?acao=adotar" class="btn btn-warning btn-lg ">Ver mais animais</a>
             </div>
           </div>
         </div>

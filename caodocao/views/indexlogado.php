@@ -1,3 +1,8 @@
+<?php include_once __DIR__."/../models/CrudUsuario.php";
+include_once __DIR__."/../models/Usuario.php";
+$crudUsuario = new CrudUsuario();
+$usuario  = $crudUsuario->GetUsuario($_SESSION['cod_usu']);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,25 +19,21 @@
       <a class="navbar-brand" href="">
         <img src="../views/img/logo.png" class="d-inline-block align-top rounded" alt="" width="250" height="60"> </a>
       <a class="navbar-brand" href="#">
-        <b href="index.html" style="background-image: url('../../../projetoCaodocao-master/caodocao/assets/img/logo.png');background-position:left center;background-repeat:repeat;" class="w-75"> </b>
       </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item"> </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../controller/sfdklogado.php?acao=perfil">
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../controller/sfdklogado.php?acao=perfil&id=<?=$usuario->getCodUsu();?>"">
           <i class="fa d-inline fa-lg fa-user-circle-o"></i> perfil</a>
         <a class="btn navbar-btn ml-2 text-dark btn-warning" href="">
           <i class="fa d-inline fa-lg fa-github"></i> Animais</a>
-        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../index.php">
+        <a class="btn navbar-btn ml-2 text-dark btn-warning" href="../controller/sfdklogado.php?acao=logout">
           <i class="fa d-inline fa-lg fa-reply-all"></i> Sign out</a>
       </div>
-    </div>
   </nav>
-  <div class="py-5 text-center" style="background-image: url('../views/img/portfolio/placeholder-2.png'); background-size: cover;">
+  <div class="py-5 text-center" style="background-image: url('../views/img/portfolio/placeholder-2.png'); background-size:100%;position relative;display: block">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-12">
